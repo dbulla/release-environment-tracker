@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: "releaseTracker"
+      POSTGRES_USER: "me"
+      POSTGRES_PASSWORD: "noPassword"
+    ports:
+      - "5432:5432"

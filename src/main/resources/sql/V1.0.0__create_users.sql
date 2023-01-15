@@ -1,0 +1,6 @@
+-- create user "me" with password "noPassword";
+--
+-- grant all privileges on database "releaseTracker" to "me";
+-- alter default privileges in schema public grant usage on sequences to "me";
+-- set search_path to public;
+-- grant usage on schema public to "me";

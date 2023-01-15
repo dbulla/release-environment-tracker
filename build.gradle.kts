@@ -6,9 +6,10 @@
  * User Manual available at https://docs.gradle.org/7.6/userguide/building_java_projects.html
  * This project uses @Incubating APIs which are subject to change.
  */
-import org.jooq.meta.jaxb.ForcedType
-import org.jooq.meta.jaxb.Logging
-import org.jooq.meta.jaxb.Property
+//import org.jooq.meta.jaxb.ForcedType
+//import org.jooq.meta.jaxb.Logging
+//import org.jooq.meta.jaxb.Property
+import org.flywaydb.gradle.task.FlywayMigrateTask
 
 var KOTEST_VERSION = "5.5.4"
 
@@ -23,7 +24,9 @@ plugins {
   id("com.github.ben-manes.versions") version "0.44.0"
   id("com.dorongold.task-tree") version "2.1.1"
 
-//  id("nu.studer.jooq") version "8.1"
+  id("com.avast.gradle.docker-compose") version "0.16.11"
+  id("org.flywaydb.flyway") version "9.11.0"
+  //  id("nu.studer.jooq") version "8.1"
 }
 
 repositories {
@@ -38,13 +41,15 @@ repositories {
 //  }
 //}
 
-val databaseLibrary = "com.h2database:h2:2.1.214"
+//val databaseLibrary = "com.h2database:h2:2.1.214"
+val databaseLibrary = "org.postgresql:postgresql:42.5.1"
 
 dependencies {
   implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
   // This dependency is used by the application.
   implementation("com.google.guava:guava:31.1-jre")
-  implementation("org.jooq:jooq:3.17.6")
+  //  implementation("org.jooq:jooq:3.17.6")
+
 
   implementation(databaseLibrary)
   //  testImplementation("junit:junit:4.11")
@@ -55,17 +60,28 @@ dependencies {
   testImplementation("io.kotest:kotest-assertions-core:$KOTEST_VERSION")
   testImplementation("io.kotest:kotest-property:$KOTEST_VERSION")
 
-//  jooqGenerator(databaseLibrary)
-  //todo add flyway lib and task section
+  //  jooqGenerator(databaseLibrary)
 }
 
 //apply ("jooq.gradle.kts")
+
+val runFlyway by tasks.registering(FlywayMigrateTask::class) {
+  dependsOn("processResources")
+  description = "Run the Flyway migration"
+  url = "jdbc:postgresql://localhost:5432/releaseTracker"
+  user = "me"
+  password = "noPassword"
+  schemas = arrayOf("public")
+  locations = arrayOf("filesystem:${project.buildDir}/resources/main/sql")
+}
+
+
 
 testing {
   suites {
     // Configure the built-in test suite
     val test by getting(JvmTestSuite::class) {
-      // Use Kotlin Test test framework
+      // Use KotlinTest test framework
       useKotlinTest("1.8.0")
 
       dependencies {
