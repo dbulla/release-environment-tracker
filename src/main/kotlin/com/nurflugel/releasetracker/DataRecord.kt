@@ -32,15 +32,24 @@ class DataRecord {
     this.buildNumber = valueMap["build"].toString().trim()
     val toString = valueMap["deployed"].toString().trim()
     val env = toString.substringAfter("wi-").uppercase(Locale.getDefault())
-    this.deployEnvironment = Environment.valueOf(env)
-    this.date = null// LocalDateTime.now() //     valueMap["date"]
+    try {
+      this.deployEnvironment = when {
+        env.isEmpty()         -> Environment.STAGE
+        env == "NULL"         -> Environment.STAGE
+        env == "STAGE - NULL" -> Environment.STAGE
+        else                  -> Environment.valueOf(env)
+      }
+    } catch (e: Exception) {
+      TODO("Not yet implemented")
+    }
+    this.date = null // LocalDateTime.now() //     valueMap["date"]
     this.commitMessage = valueMap["commitMessage"].toString().trim()
     this.author = valueMap["author"].toString().trim()
-    this.story=parseStoryFromCommit(commitMessage)
+    this.story = parseStoryFromCommit(commitMessage)
   }
 
   private fun parseStoryFromCommit(commitMessage: String): String? {
-    if(commitMessage.contains("PME")) {
+    if (commitMessage.contains("PME")) {
       val trimmit = commitMessage.substringBefore("PME")
       val after = commitMessage.substringAfter(trimmit)
       val storyNumber = after.substringBefore(" ")

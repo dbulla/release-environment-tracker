@@ -22,8 +22,7 @@ class SlackParserApp(@Autowired val jdbcTemplate: JdbcTemplate) : CommandLineRun
   companion object {
     @JvmStatic
     fun main(args: Array<String>) {
-      //      runApplication<SlackParserApp>(*args)
-      val contexto: ApplicationContext = SpringApplicationBuilder(SlackParserApp::class.java)
+      SpringApplicationBuilder(SlackParserApp::class.java)
         .web(WebApplicationType.NONE)
         .headless(false)
         .bannerMode(Banner.Mode.OFF)
@@ -53,13 +52,17 @@ class SlackParserApp(@Autowired val jdbcTemplate: JdbcTemplate) : CommandLineRun
       if (date == null) {
         date = LocalDateTime.now()
       }
-      println("::::::::::::datum = ${datum.appName} ${datum.author} ${datum.commitMessage} ${datum.deployEnvironment} ${datum.story} ${datum.date} ")
-      val sql = ("INSERT INTO deploys (app_name, author, commit_message, deploy_date,environment,story) " +
-                 "VALUES ('${datum.appName}', '${datum.author}','${datum.commitMessage}','$date','${datum.deployEnvironment}','${datum.story}')");
+      //      println("::::::::::::datum = ${datum.appName} ${datum.author} ${datum.commitMessage} ${datum.deployEnvironment} ${datum.story} ${datum.date} ")
+      val sql = ("""
+        INSERT INTO deploys (app_name, build_number, author, commit_message, deploy_date,environment,story) 
+        VALUES ('${datum.appName}','${datum.buildNumber}', '${datum.author}','${datum.commitMessage}','$date','${datum.deployEnvironment}','${datum.story}')
+        ON CONFLICT (app_name, build_number, environment) DO UPDATE 
+          SET deploy_date = excluded.deploy_date; 
+          """).trimIndent();
       try {
         val rows: Int = jdbcTemplate.update(sql)
         if (rows > 0) {
-          println("A new row has been inserted.")
+          println("$rows new rows have been inserted.")
         }
       } catch (e: Exception) {
         println("e.message = ${e.message}")
@@ -69,7 +72,7 @@ class SlackParserApp(@Autowired val jdbcTemplate: JdbcTemplate) : CommandLineRun
 
   /** Take the text copy/pasted text and parse the data we want out of it */
   private fun parseData(textToProcess: String): List<DataRecord> {
-    println(textToProcess)
+    //    println(textToProcess)
 
     val lines = textToProcess.split('\n')
     return lines
@@ -78,6 +81,7 @@ class SlackParserApp(@Autowired val jdbcTemplate: JdbcTemplate) : CommandLineRun
   }
 
   private fun getClipboardContents(): String? {
+    println("getClipboardContents()")
     val clipboard = Toolkit.getDefaultToolkit().systemClipboard
     val contents = clipboard.getContents(null)
     val hasTransferableText = contents != null && contents.isDataFlavorSupported(stringFlavor)
