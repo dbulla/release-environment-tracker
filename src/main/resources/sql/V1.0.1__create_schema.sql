@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS deploys
     author         varchar(60) NOT NULL,
     commit_message varchar     not null,
     deploy_date    timestamptz DEFAULT now(),
-    environment    varchar(4)  not null,
+    environment    varchar(10) not null,
     story          varchar(100),
     created_at     timestamptz DEFAULT now(),
     updated_at     timestamptz DEFAULT now(),

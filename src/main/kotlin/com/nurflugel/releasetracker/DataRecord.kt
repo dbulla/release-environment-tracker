@@ -4,13 +4,13 @@ import java.time.LocalDateTime
 import java.util.*
 
 class DataRecord {
-  private var author: String
-  private var commitMessage: String
-  private var date: LocalDateTime?
-  private var deployEnvironment: Environment
-  private var buildNumber: String
-  private var appName: String
-  private var story: String?
+  var author: String
+  var commitMessage: String
+  var date: LocalDateTime?
+  var deployEnvironment: Environment
+  var buildNumber: String
+  var appName: String
+  var story: String?
 
   constructor(appName: String, buildNumber: String, deployEnvironment: Environment, date: LocalDateTime?, commitMessage: String, author: String, story: String?) {
     this.appName = appName
@@ -19,7 +19,7 @@ class DataRecord {
     this.date = date
     this.commitMessage = commitMessage
     this.author = author
-    this.story=story
+    this.story = story
   }
 
   constructor(text: String) {

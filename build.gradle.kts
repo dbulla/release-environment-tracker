@@ -10,6 +10,7 @@
 //import org.jooq.meta.jaxb.Logging
 //import org.jooq.meta.jaxb.Property
 import org.flywaydb.gradle.task.FlywayMigrateTask
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 var KOTEST_VERSION = "5.5.4"
 
@@ -19,7 +20,10 @@ plugins {
 
   // Apply the application plugin to add support for building a CLI application in Java.
   application
+
   id("org.springframework.boot") version "3.0.1"
+  id("io.spring.dependency-management") version "1.1.0"
+  kotlin("plugin.spring") version "1.8.0"
 
   id("com.github.ben-manes.versions") version "0.44.0"
   id("com.dorongold.task-tree") version "2.1.1"
@@ -43,6 +47,8 @@ repositories {
 
 //val databaseLibrary = "com.h2database:h2:2.1.214"
 val databaseLibrary = "org.postgresql:postgresql:42.5.1"
+java.sourceCompatibility = JavaVersion.VERSION_17
+//java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 dependencies {
   implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
@@ -54,7 +60,14 @@ dependencies {
   implementation(databaseLibrary)
   //  testImplementation("junit:junit:4.11")
 
-  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+  //  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0")
+  implementation("org.springframework.boot:spring-boot-starter")
+  implementation("org.springframework.boot:spring-boot-starter-jdbc:3.0.1")
+  //  implementation("org.flywaydb:flyway-core:9.11.0")
+  implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.0")
+  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0")
+  runtimeOnly("org.postgresql:postgresql")
+  testImplementation("org.springframework.boot:spring-boot-starter-test")
 
   testImplementation("io.kotest:kotest-runner-junit5:$KOTEST_VERSION")
   testImplementation("io.kotest:kotest-assertions-core:$KOTEST_VERSION")
@@ -62,6 +75,18 @@ dependencies {
 
   //  jooqGenerator(databaseLibrary)
 }
+
+tasks.withType<KotlinCompile> {
+  kotlinOptions {
+    freeCompilerArgs = listOf("-Xjsr305=strict")
+    jvmTarget = "17"
+  }
+}
+
+tasks.withType<Test> {
+  useJUnitPlatform()
+}
+
 
 //apply ("jooq.gradle.kts")
 
@@ -94,7 +119,7 @@ testing {
 
 application {
   // Define the main class for the application.
-  mainClass.set("com.nurflugel.releasetracker.AppKt")
+  mainClass.set("com.nurflugel.releasetracker.SlackParserApp")
   group = "com.nurflugel"
   version = "0.0.1-SNAPSHOT"
 }

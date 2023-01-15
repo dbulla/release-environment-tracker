@@ -1,11 +1,11 @@
 10:42
 jenkins
 APP
-app:infrastructure-dra-indexing-postgres### build:46### deployed: wi-stage### commitMessage: Removing replication slots, now for something completely different### author: dbulla
+app:infrastructure-dra-indexing-postgres### build:46### deployed: wi-dev### commitMessage: Removing replication slots, now for something completely different### author: dbulla
 10:48
 jenkins
 APP
-app:infrastructure-dra-indexing-postgres### build:46### deployed: wi-stage### commitMessage: Removing replication slots, now for something completely different### author: dbulla
+app:infrastructure-dra-indexing-postgres### build:46### deployed: wi-qa### commitMessage: Removing replication slots, now for something completely different### author: dbulla
 10:50
 jenkins
 APP
@@ -17,7 +17,7 @@ app:infrastructure-dra-indexing-postgres### build:46### deployed: wi-stage### co
 12:42
 jenkins
 APP
-app:infrastructure-dra-indexing-postgres### build:46### deployed: wi-stage### commitMessage: Removing replication slots, now for something completely different### author: dbulla
+app:infrastructure-dra-indexing-postgres### build:46### deployed: wi-prod### commitMessage: Removing replication slots, now for something completely different### author: dbulla
 
 // timestamp
 // "jenkins"
