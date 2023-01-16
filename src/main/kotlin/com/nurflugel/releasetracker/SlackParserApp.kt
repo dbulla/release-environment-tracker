@@ -9,8 +9,8 @@ import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.WebApplicationType
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.builder.SpringApplicationBuilder
-import org.springframework.context.ApplicationContext
 import org.springframework.jdbc.core.JdbcTemplate
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import java.awt.Toolkit
 import java.awt.datatransfer.DataFlavor.stringFlavor
 import java.lang.management.ManagementFactory
@@ -54,16 +54,38 @@ class SlackParserApp(@Autowired val jdbcTemplate: JdbcTemplate) : CommandLineRun
       }
       //      println("::::::::::::datum = ${datum.appName} ${datum.author} ${datum.commitMessage} ${datum.deployEnvironment} ${datum.story} ${datum.date} ")
       val sql = ("""
-        INSERT INTO deploys (app_name, build_number, author, commit_message, deploy_date,environment,story) 
-        VALUES ('${datum.appName}','${datum.buildNumber}', '${datum.author}','${datum.commitMessage}','$date','${datum.deployEnvironment}','${datum.story}')
-        ON CONFLICT (app_name, build_number, environment) DO UPDATE 
-          SET deploy_date = excluded.deploy_date; 
-          """).trimIndent();
+              INSERT INTO deploys (app_name, build_number, author, commit_message, deploy_date,environment,story)
+              VALUES ('${datum.appName}','${datum.buildNumber}', '${datum.author}','${datum.commitMessage}','$date','${datum.deployEnvironment}','${datum.story}')
+              ON CONFLICT (app_name, build_number, environment) DO UPDATE
+                SET deploy_date = excluded.deploy_date;
+                """).trimIndent();
+      //      val sql2 = "INSERT INTO deploys (app_name, build_number, author, commit_message, deploy_date,environment,story) VALUES (?,?,?,?,?,?,?) ON CONFLICT (app_name, build_number, environment) DO UPDATE SET deploy_date = excluded.deploy_date;";
       try {
-        val rows: Int = jdbcTemplate.update(sql)
-        if (rows > 0) {
-          println("$rows new rows have been inserted.")
-        }
+        jdbcTemplate.update(sql)
+        //        val template = NamedParameterJdbcTemplate(jdbcTemplate.dataSource!!)
+        //
+        //        val sql = "INSERT INTO deploys (app_name, build_number, author, commit_message, deploy_date,environment,story) VALUES (:appName,:buildNumber,:author,:commitMessage,:deployDate,:environment,:story) ON CONFLICT (app_name, build_number, environment) DO UPDATE SET deploy_date = excluded.deploy_date;";
+        //
+        //
+        //        val params: MutableMap<String, String> = HashMap()
+        //
+        //        params["appName"] = datum.appName
+        //        params["buildNumber"] = datum.buildNumber.toString()
+        //        params["author"] = datum.author
+        //        params["commitMessage"] = datum.commitMessage
+        //        params["deployDate"] = datum.date.toString()
+        //        params["environment"] = datum.deployEnvironment.toString()
+        //        params["story"] = datum.story.toString()
+        //        params["appName"] = datum.appName
+        //        params["appName"] = datum.appName
+        //        params["appName"] = datum.appName
+        //
+        //        template.update(sql, params)
+
+
+        //        jdbcTemplate.update(sql2, datum.appName, datum.buildNumber, datum.author, datum.commitMessage, date, datum.deployEnvironment, datum.story)
+
+
       } catch (e: Exception) {
         println("e.message = ${e.message}")
       }

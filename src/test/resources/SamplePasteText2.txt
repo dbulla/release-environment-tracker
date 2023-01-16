@@ -1,0 +1,906 @@
+
+app:drafe-authorizer### build:17### deployed: Stage### commitMessage: null
+11:58
+app:drafe-authorizer### build:18### deployed: Stage### commitMessage: test slack alerts
+12:01
+drafe-authorizer### build:19### deployed: Stage### commitMessage: PMEDRA-29999 Add multi-shiptos for retailers
+13:44
+app:cc-drafe-authorizer### build:34### deployed: wi-stage### commitMessage: Log quieting, Splunk alerts will be raised if there are detected hacking attempts.
+16:47
+app:drafe-es-infrastructure### build:7### deployed: wi-stage### commitMessage: fix workspace conditions
+10:10
+app:dra-ui### build:51### deployed: wi-stage### commitMessage: Add a button for clearing search terms (#575)
+11:42
+app:dra-ui  ### build:52### deployed: wi-stage### commitMessage: Add a button for clearing search terms (#575)
+13:31
+app:cc-drafe-api-handler-lambda### branch: increase_put_records_toKinesis### build:2### deployed: wi-stage### commitMessage: Update package.json
+09:54
+app:dra-ui### branch: main### build:56### deployed: wi-stage### commitMessage: Pmedra 2274 (#576)
+11:42
+app:cc-drafe-api-handler-lambda### branch: main### build:102### deployed: wi-stage### commitMessage: Update package.json (#69)
+17:51
+app:cc-drafe-image-lambda### branch: main### build:25### deployed: wi-stage### commitMessage: adding incoming event asset logs (#15)
+09:50
+app:deleteme-test-lambda### branch: terraform### build:8### deployed: wi-stage### commitMessage: test of SEC skip
+09:58
+app:deleteme-test-lambda### branch: terraform### build:9### deployed: wi-stage### commitMessage: test of SEC skip
+10:02
+cc-deleteme-test-lambda### branch: main### build:4### deployed: wi-stage### commitMessage: test of SEC skip
+10:05
+deleteme-test-lambda### branch: terraform### build:10### deployed: wi-stage### commitMessage: test of SEC skip
+11:14
+app:cc-deleteme-test-lambda### branch: main### build:5### deployed: wi-stage### commitMessage: test of shared jar
+14:46
+app:cc-dra-indexing-retrigger-order-lambda### branch: main### build:5### deployed: wi-stage### commitMessage: Merge pull request #1 from nike-dra/dbulla/fix_log_errors
+14:46
+cc-dra-indexing-s3-to-queue-lambda### branch: main### build:15### deployed: wi-stage### commitMessage: fix log errors with shared lib update (#8)
+14:46
+cc-dra-indexing-product-data-verification-lambda### branch: main### build:21### deployed: wi-stage### commitMessage: fix log errors with shared lib update (#7)
+14:46
+cc-dra-indexing-persist-sellin-order-lambda### branch: main### build:20### deployed: wi-stage### commitMessage: fix log errors by bumping to current version of shared libs (#7)
+14:46
+cc-dra-indexing-missing-product-data-lambda### branch: main### build:25### deployed: wi-stage### commitMessage: bump lib to fix log errors (#8)
+14:46
+cc-dra-indexing-persist-nsp-order-lambda### branch: main### build:28### deployed: wi-stage### commitMessage: fix log errors with shared lib update (#10)
+14:46
+cc-dra-indexing-missing-assets-lambda### branch: main### build:21### deployed: wi-stage### commitMessage: fix log errors by bumping lib (#8)
+14:46
+cc-dra-indexing-gate-lambda### branch: main### build:41### deployed: wi-stage### commitMessage: fix for log errors by bumping shared lib (#9)
+14:46
+cc-dra-indexing-data-cleanup-lambda### branch: main### build:15### deployed: wi-stage### commitMessage: remove log errors by bumping shared lib (
+)
+15:02
+app:cc-dra-indexing-techsheet-poller### branch: main### build:118### deployed: wi-stage:
+15:02
+cc-dra-indexing-dam-poller### branch: main### build:89### deployed: wi-stage:
+15:02
+cc-dra-indexing-retrigger-order-fargate### branch: main### build:8### deployed: wi-stage:
+15:02
+cc-dra-indexing-scene7-poller### branch: main### build:39### deployed: wi-stage:
+15:02
+cc-dra-indexing-dotcom-poller### branch: main### build:6### deployed: wi-stage:
+21:37
+app:drafe-es-infrastructure### branch: main### build:44### deployed: wi-stage### commitMessage: use endpoint for template
+21:42
+app:cc-dra-indexing-asset-indexer-lambda### branch: main### build:43### deployed: wi-stage### commitMessage: Quiet log errors (#12)
+21:42
+cc-dra-indexing-asset-delete-lambda### branch: main### build:32### deployed: wi-stage### commitMessage: Bump shared library to reduce errors (#8)
+21:42
+cc-dra-indexing-order-index-lambda### branch: main### build:40### deployed: wi-stage### commitMessage: fix log errors with shared lib bump (#8)
+21:42
+cc-dra-indexing-product-indexer-lambda### branch: main### build:93### deployed: wi-stage### commitMessage: fix log errors with shared lib update (#11)
+21:42
+cc-dra-indexing-product-delete-lambda### branch: main### build:25### deployed: wi-stage### commitMessage: fix log errors with db lib update (#6)
+21:42
+cc-dra-indexing-order-delete-lambda### branch: main### build:26### deployed: wi-stage### commitMessage: fix db log errors with shared library upgrade (#6)
+23:32
+app:cc-drafe-api-handler-lambda### branch: main### build:106### deployed: wi-stage### commitMessage: fix log errors by update shared lib (#71)
+23:33
+cc-drafe-upcs-lambda### branch: main### build:41### deployed: wi-stage### commitMessage: added test env var for elasticsearch (#23)
+23:33
+cc-drafe-subscription-converter-lambda### branch: main### build:22### deployed: wi-stage### commitMessage: v55 (#11)
+23:33
+cc-drafe-attributes-lambda### branch: main### build:29### deployed: wi-stage### commitMessage: v55 (#21)
+13:04
+app:drafe-es-infrastructure### branch: main### build:45### deployed: wi-stage### commitMessage: use endpoint for template
+13:25
+app:cc-drafe-image-lambda### branch: verbose_log### build:
+### deployed: wi-stage### commitMessage: fix yarn audit
+16:59
+app:cc-drafe-image-lambda### branch: verbose_log### build:5### deployed: wi-stage### commitMessage: adding verbose logs for debug
+17:29
+app:dra-indexing### branch: main### build:349### deployed: wi-stage### commitMessage: remove sink to qa for dev, qa, and stage
+10:25
+app:dra-indexing-missing-assets-lambda### branch: terraform### build:
+### deployed: wi-stage### commitMessage: removed environment vars for Scene7 library credentials (#10)
+10:37
+app:cc-dra-indexing-missing-assets-lambda### branch: main### build:22### deployed: wi-stage### commitMessage: added call to retrieve Aurora images, removed Scene7 library call (#9)
+11:09
+app:cc-dra-indexing-scene7-poller### branch: main### build:40### deployed: wi-stage:
+11:43
+app:dra-indexing### branch: main### build:352### deployed: wi-stage### commitMessage: update stream name for qa2
+13:40
+app:cc-drafe-image-lambda### branch: verbose_log### build:7### deployed: wi-stage### commitMessage: adding sk log for debug
+16:58
+app:cc-drafe-image-lambda### branch: verbose_log### build:9### deployed: wi-stage### commitMessage: updating shared resource to fix image circu;ar issue
+17:28
+app:cc-drafe-image-lambda### branch: verbose_log### build:11### deployed: wi-stage### commitMessage: adding more logs
+09:59
+app:cc-imageproxy### branch: main### build:45### deployed: wi-stage### commitMessage: fixed lint error
+10:39
+app:cc-drafe-api-handler-lambda### branch: main### build:107### deployed: wi-stage### commitMessage: add asset source to requests (#73)
+12:33
+app:cc-drafe-image-lambda### branch: main### build:26### deployed: wi-stage### commitMessage: added parameter conversions for aurora images, added tests (#16)
+14:09
+app:cc-drafe-image-lambda### branch: verbose_log### build:15### deployed: wi-stage### commitMessage: merge changes from main
+09:18
+app:cc-drafe-image-lambda### branch: verbose_log### build:19### deployed: wi-stage### commitMessage: updating shared controllers for update asset fix
+12:03
+app:cc-imageproxy### branch: main### build:46### deployed: wi-stage### commitMessage: fixed url params on aurora images
+12:03
+cc-drafe-image-lambda### branch: main### build:27### deployed: wi-stage### commitMessage: Source params (#17)
+13:20
+app:cc-drafe-image-lambda### branch: verbose_log### build:22### deployed: wi-stage### commitMessage: update
+14:39
+app:deleteme-test-lambda### branch: terraform### build:14### deployed: wi-stage### commitMessage: try new destroy logic
+11:01
+app:cc-drafe-gzip### branch: main### build:60### deployed: wi-stage:
+13:57
+app:cc-drafe-image-lambda### branch: verbose_log### build:24### deployed: wi-stage### commitMessage: update shared controllers for test
+14:34
+app:cc-drafe-image-lambda### branch: verbose_log### build:26### deployed: wi-stage### commitMessage: Update package.json
+14:58
+app:cc-drafe-image-lambda### branch: verbose_log### build:28### deployed: wi-stage### commitMessage: Update package.json
+10:00
+app:cc-dra-indexing-dam-poller### branch: main### build:90### deployed: wi-stage:
+14:55
+app:cc-drafe-asset-gate-lambda### branch: fix_asset_status_issue### build:2### deployed: wi-stage### commitMessage: update shared controllers
+11:24
+app:drafe-acknowledge-email-lambda### branch: terraform### build:5### deployed: wi-stage### commitMessage: PMEDRA-2342 (#10)
+11:24
+drafe-kinesis-reader-lambda### branch: terraform### build:
+### deployed: wi-stage### commitMessage: memory_size (#6)
+11:25
+drafe-stepfunction-trigger-lambda### branch: terraform### build:
+### deployed: wi-stage### commitMessage: PMEDRA-2342 (#5)
+11:25
+drafe-subscription-qualifier-lambda### branch: terraform### build:
+### deployed: wi-stage### commitMessage: PMEDRA-2342 (
+)
+11:25
+drafe-update-request-lambda### branch: terraform### build:
+### deployed: wi-stage### commitMessage: PMEDRA-2342 (#7)
+11:51
+app:drafe-brand-image-lambda### branch: terraform### build:4### deployed: wi-stage### commitMessage: Adding delivery delay to avoid race condition on processing lambda (#10)
+11:51
+dra-es-infrastructure### branch: main### build:12### deployed: wi-stage### commitMessage: adding delivery delay to avoid race condition on processing lambdas (#203)
+13:26
+app:drafe-common### branch: main### build:14### deployed: wi-stage### commitMessage: Add logging (#5)
+04:31
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:94### deployed: wi-stage### commitMessage: Remove postgres call (#12)
+13:55
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:95### deployed: wi-stage### commitMessage: removed logs
+15:13
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:96### deployed: wi-stage### commitMessage: updated lib versions
+15:46
+app:drafe-common### branch: main### build:15### deployed: wi-stage### commitMessage: Add logging (#5)
+16:16
+app:cc-drafe-authorizer### branch: main### build:37### deployed: wi-stage### commitMessage: Case fix nikeusertoken (#10)
+17:20
+app:dra-indexing-product-indexer-lambda### branch: terraform### build:7### deployed: wi-stage### commitMessage: set batch size to 5
+17:25
+cc-dra-indexing-product-indexer-lambda### branch: main### build:97### deployed: wi-stage### commitMessage: removed log
+17:27
+cc-dra-indexing-missing-assets-lambda### branch: main### build:23### deployed: wi-stage### commitMessage: updated controllers version
+17:34
+app:cc-dra-indexing-missing-product-data-lambda### branch: main### build:26### deployed: wi-stage### commitMessage: updated controllers version
+18:10
+app:cc-dra-indexing-persist-nsp-order-lambda### branch: main### build:29### deployed: wi-stage### commitMessage: updated controllers version
+18:11
+cc-dra-indexing-persist-sellin-order-lambda### branch: main### build:21### deployed: wi-stage### commitMessage: updated controllers version
+18:12
+dra-indexing-product-indexer-lambda### branch: terraform### build:8### deployed: wi-stage### commitMessage: reset batch size to 10
+18:22
+app:cc-dra-indexing-techsheet-poller### branch: main### build:119### deployed: wi-stage:
+18:37
+app:cc-dra-indexing-gate### branch: main### build:70### deployed: wi-stage:
+18:38
+cc-dra-indexing-dam-poller### branch: main### build:91### deployed: wi-stage:
+18:40
+dra-indexing-gate-lambda### branch: terraform### build:5### deployed: wi-stage### commitMessage: commented out lambda source mapping from kinesis (#10)
+19:52
+app:dra-indexing-product-indexer-lambda### branch: terraform### build:9### deployed: wi-stage### commitMessage: changed batch size to 1
+09:36
+app:dra-indexing-product-indexer-lambda### branch: terraform### build:10### deployed: wi-stage### commitMessage: Reset batch size to 10
+09:54
+app:cc-dra-indexing-dotcom-poller### branch: main### build:7### deployed: wi-stage:
+10:13
+app:cc-dra-indexing-scene7-poller### branch: main### build:41### deployed: wi-stage:
+10:16
+cc-dra-indexing-dam-poller### branch: main### build:92### deployed: wi-stage:
+10:16
+cc-dra-indexing-techsheet-poller### branch: main### build:120### deployed: wi-stage:
+16:40
+app:cc-dra-indexing-gate### branch: main### build:74### deployed: wi-stage:
+09:25
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:98### deployed: wi-stage### commitMessage: set chunk size to 25 instead of 50 to avoid request size limits
+16:23
+app:dra-indexing-product-indexer-lambda### branch: terraform### build:11### deployed: wi-stage### commitMessage: Update lambda.tf (#13)
+16:23
+dra-indexing-missing-assets-lambda### branch: terraform### build:4### deployed: wi-stage### commitMessage: Update lambda.tf (#11)
+16:23
+dra-indexing-missing-product-data-lambda### branch: terraform### build:
+### deployed: wi-stage### commitMessage: Update lambda.tf (#9)
+16:39
+app:cc-dra-indexing-gate### branch: main### build:75### deployed: wi-stage:
+16:47
+app:dra-indexing### branch: main### build:353### deployed: wi-stage### commitMessage: removed 5 minute delay on product index queue (#76)
+14:23
+app:cc-dra-indexing-missing-product-data-lambda### branch: main### build:28### deployed: wi-stage### commitMessage: updated shared-cpg version (#10)
+14:28
+cc-drafe-api-handler-lambda### branch: main### build:108### deployed: wi-stage### commitMessage: Update schema for seasons (#74)
+09:19
+app:dra-indexing-product-indexer-lambda### branch: terraform### build:12### deployed: wi-stage### commitMessage: set concurrency to 10 in dev and qa, 50 in stage and prod (#14)
+10:38
+app:dra-indexing-missing-assets-lambda### branch: terraform### build:5### deployed: wi-stage### commitMessage: removed concurrency limit
+10:38
+dra-indexing-missing-product-data-lambda### branch: terraform### build:4### deployed: wi-stage### commitMessage: removed concurrency limit
+12:53
+app:cc-dra-indexing-dam-poller### branch: main### build:93### deployed: wi-stage:
+13:58
+app:cc-dra-indexing-dam-poller### branch: main### build:94### deployed: wi-stage:
+15:07
+app:cc-dra-indexing-dam-poller### branch: main### build:95### deployed: wi-stage:
+15:55
+app:cc-dra-indexing-aurora-poller### branch: main### build:27### deployed: wi-stage:
+17:21
+app:cc-dra-indexing-dam-poller### branch: main### build:96### deployed: wi-stage:
+18:05
+app:cc-dra-indexing-scene7-poller### branch: main### build:42### deployed: wi-stage:
+10:28
+app:cc-dra-indexing-dotcom-poller### branch: main### build:8### deployed: wi-stage:
+10:30
+cc-dra-indexing-dam-poller### branch: main### build:97### deployed: wi-stage:
+17:20
+app:cc-dra-indexing-persist-sellin-order-lambda### branch: main### build:35### deployed: wi-stage### commitMessage: fix log errors - tagging to 1.0.0 (#8)
+13:19
+app:dra-ui### branch: main### build:76### deployed: wi-stage### commitMessage: Fix for both active and inactive subscriptions being displayed after creation of subscription (#593)
+10:09
+10:22
+app:cc-dra-indexing-product-message-lambda### branch: main### build:24### deployed: wi-stage### commitMessage: fix db connect issues (#4)
+10:22
+cc-dra-indexing-gate-lambda### branch: main### build:42### deployed: wi-stage### commitMessage: dbulla/PMEDRA-2359_fix_db_connect_errors (#11)
+10:22
+cc-dra-indexing-order-delete-lambda### branch: main### build:27### deployed: wi-stage### commitMessage: fix db log errors with shared library upgrade (#7)
+10:22
+cc-dra-indexing-persist-nsp-order-lambda### branch: main### build:30### deployed: wi-stage### commitMessage: dbulla/fix_log_errors (#11)
+10:22
+cc-dra-indexing-missing-product-data-lambda### branch: main### build:29### deployed: wi-stage### commitMessage: bump lib to fix log errors (#11)
+10:22
+cc-dra-indexing-missing-assets-lambda### branch: main### build:24### deployed: wi-stage### commitMessage: fix db connect issues (#12)
+10:22
+cc-dra-indexing-data-cleanup-lambda### branch: main### build:16### deployed: wi-stage### commitMessage: dbulla/remove_log_errors (#4)
+10:22
+cc-dra-indexing-asset-indexer-lambda### branch: main### build:44### deployed: wi-stage### commitMessage: dbulla/fix_log_errors (#13)
+10:22
+cc-dra-indexing-asset-delete-lambda### branch: main### build:34### deployed: wi-stage### commitMessage: dbulla/error_reduction (#9)
+10:23
+cc-dra-indexing-s3-to-queue-lambda### branch: main### build:16### deployed: wi-stage### commitMessage: update shared lib to fix log errors (#9)
+10:23
+cc-dra-indexing-retrigger-order-lambda### branch: main### build:6### deployed: wi-stage### commitMessage: remove shared lib no longer needed (#2)
+10:24
+cc-dra-indexing-product-indexer-lambda### branch: main### build:99### deployed: wi-stage### commitMessage: fix log errors with shared lib update (#15)
+10:28
+cc-dra-indexing-product-delete-lambda### branch: main### build:27### deployed: wi-stage### commitMessage: fix log errors with db lib update (#7)
+10:28
+cc-dra-indexing-order-index-lambda### branch: main### build:41### deployed: wi-stage### commitMessage: fix log errors with shared lib bump (#9)
+10:28
+cc-dra-indexing-dotcom-poller### branch: main### build:9### deployed: wi-stage:
+10:29
+cc-dra-indexing-dam-poller### branch: main### build:98### deployed: wi-stage:
+10:29
+drafe-brand-image-lambda### branch: terraform### build:6### deployed: wi-stage### commitMessage: increase memory size (#11)
+10:29
+cc-dra-indexing-aurora-poller### branch: main### build:28### deployed: wi-stage:
+10:29
+cc-dra-indexing-retrigger-order-fargate### branch: main### build:9### deployed: wi-stage:
+10:29
+cc-dra-indexing-techsheet-poller### branch: main### build:123### deployed: wi-stage:
+10:29
+cc-dra-indexing-gate### branch: main### build:77### deployed: wi-stage:
+10:30
+cc-dra-indexing-scene7-poller### branch: main### build:43### deployed: wi-stage:
+12:10
+app:cc-drafe-api-handler-lambda### branch: main### build:109### deployed: wi-stage### commitMessage: dbulla/PMEDRA-2359_fix_db_connect_errors (#75)
+13:56
+app:drafe-kinesis-reader-lambda### branch: terraform### build:4### deployed: wi-stage### commitMessage: memory_size (#6)
+17:24
+app:cc-dra-indexing-dam-poller### branch: main### build:102### deployed: wi-stage:
+09:16
+app:drafe-kinesis-reader-lambda### branch: terraform### build:5### deployed: wi-stage### commitMessage: memory_size (#6)
+09:19
+dra-indexing-order-delete-lambda### branch: terraform### build:4### deployed: wi-stage### commitMessage: set workspaces to empty to destroy environment resources (#8)
+10:31
+app:cc-dra-indexing-s3-to-queue-lambda### branch: main### build:17### deployed: wi-stage### commitMessage: dbulla/remove_db_pool (#10)
+10:40
+app:dra-indexing### branch: main### build:354### deployed: wi-stage### commitMessage: removed defunct indexing queues (#77)
+11:01
+app:cc-drafe-kinesis-reader-lambda### branch: main### build:21### deployed: wi-stage### commitMessage: Add logs to track malformed json strings (#7)
+11:37
+app:cc-dra-indexing-dam-poller### branch: main### build:103### deployed: wi-stage:
+10:10
+app:dra-ui### branch: main### build:81### deployed: wi-stage### commitMessage: Pmedra 2217 (#597)
+10:21
+app:drafe-kinesis-reader-lambda### branch: terraform### build:6### deployed: wi-stage### commitMessage: memory_size (#6)
+10:39
+11:09
+app:cc-drafe-techsheet-lambda### branch: main### build:21### deployed: wi-stage### commitMessage: Log techsheet failure at info, this case is expected (#16)
+13:04
+app:dra-indexing-persist-nsp-order-lambda### branch: terraform### build:4### deployed: wi-stage### commitMessage: doubling memory (#12)
+13:38
+app:dra-indexing### branch: main### build:355### deployed: wi-stage### commitMessage: removed defunct indexing queues (#77)
+13:45
+app:drafe-presigned-authorizer-lambda### branch: terraform### build:5### deployed: wi-stage### commitMessage: double memory (#9)
+13:53
+app:dra-ui### branch: main### build:82### deployed: wi-stage### commitMessage: Time string fix (#598)
+12:44
+app:cc-dra-indexing-dotcom-poller### branch: main### build:10### deployed: wi-stage:
+12:46
+cc-dra-indexing-scene7-poller### branch: main### build:44### deployed: wi-stage:
+17:38
+app:cc-drafe-api-handler-lambda### branch: main### build:111### deployed: wi-stage### commitMessage: added seasons to schema for package query (#76)
+09:42
+app:dra-ui### branch: main### build:85### deployed: wi-stage### commitMessage: Season filters (#602)
+09:51
+app:dra-indexing-persist-nsp-order-lambda### branch: terraform### build:5### deployed: wi-stage: (#13)
+10:27
+app:dra-indexing-persist-sellin-order-lambda### branch: terraform### build:
+### deployed: wi-stage### commitMessage: double memory size (#9)
+10:32
+app:dra-indexing-product-message-lambda### branch: terraform### build:42### deployed: wi-stage### commitMessage: double memory size (#5)
+14:12
+app:dra-ui### branch: main### build:86### deployed: wi-stage### commitMessage: Subscription fixes (#603)
+17:08
+app:cc-dra-indexing-gate### branch: main### build:79### deployed: wi-stage:
+09:07
+app:cc-dra-indexing-techsheet-poller### branch: main### build:124### deployed: wi-stage:
+09:07
+cc-dra-indexing-dam-poller### branch: main### build:104### deployed: wi-stage:
+10:12
+app:cc-dra-indexing-persist-sellin-order-lambda### branch: main### build:36### deployed: wi-stage### commitMessage: Fixed mocking issue due to bad module declaration
+13:07
+app:dra-indexing-product-message-lambda### branch: terraform### build:44### deployed: wi-stage### commitMessage: double memory size (#5)
+15:19
+app:dra-indexing-product-indexer-lambda### branch: terraform### build:13### deployed: wi-stage### commitMessage: fix out of memory issues (#16)
+15:19
+dra-indexing-missing-assets-lambda### branch: terraform### build:6### deployed: wi-stage### commitMessage: increase_memory_size (#13)
+15:19
+drafe-asset-gate-lambda### branch: terraform### build:1 ### deployed: wi-stage### commitMessage: increase_memory_size (#12)
+09:37
+app:dra-indexing-missing-product-data-lambda### branch: terraform### build:5### deployed: wi-stage### commitMessage: double memory (#12)
+13:05
+app:cc-drafe-api-handler-lambda### branch: main### build:112### deployed: wi-stage### commitMessage: Trying to quiet db connection errors (#77)
+16:02
+app:dra-ui### branch: main### build:89### deployed: wi-stage### commitMessage: Fix for email notifications toggle in settings page (#606)
+16:09
+app:dra-ui### branch: main### build:90### deployed: wi-stage### commitMessage: Fix for email notifications toggle in settings page (#606)
+10:41
+app:dra-indexing-missing-assets-lambda### branch: terraform### build:7### deployed: wi-stage### commitMessage: increase_memory_size (#13)
+12:11
+app:dra-indexing-missing-assets-lambda### branch: terraform### build:9### deployed: wi-stage### commitMessage: increase_memory_size (#13)
+09:44
+app:dra-ui### branch: main### build:91### deployed: wi-stage### commitMessage: hid order input for internal users (#607)
+08:51
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:105### deployed: wi-stage### commitMessage: fixedgrouped data
+08:51
+cc-dra-indexing-missing-product-data-lambda### branch: main### build:35### deployed: wi-stage### commitMessage: updated cpg version
+08:55
+cc-dra-indexing-gate### branch: main### build:83### deployed: wi-stage:
+10:09
+app:cc-drafe-api-handler-lambda### branch: main### build:114### deployed: wi-stage### commitMessage: updated shared-elasticsearch version
+11:22
+app:cc-drafe-api-handler-lambda### branch: main### build:120### deployed: wi-stage### commitMessage: skipping smoke tests until fixed
+10:55
+app:dra-indexing-persist-sellin-order-lambda### branch: terraform### build:4### deployed: wi-stage### commitMessage: dbulla_terraform_increase_memory_size (#10)
+10:55
+dra-indexing-product-message-lambda### branch: terraform### build:45### deployed: wi-stage### commitMessage: dbulla_terraform_double_memory_size (#6)
+10:55
+dra-indexing-missing-product-data-lambda### branch: terraform### build:6### deployed: wi-stage### commitMessage: dbulla_terraform_increase_memory (#14)
+10:55
+drafe-subscription-converter-lambda### branch: terraform### build: 1### deployed: wi-stage### commitMessage: increase memory size (#12)
+12:08
+app:cc-dra-indexing-missing-product-data-lambda### branch: main### build:36### deployed: wi-stage### commitMessage: updated cpg version
+14:15
+app:dra-indexing-missing-product-data-lambda### branch: terraform### build:7### deployed: wi-stage### commitMessage: Update quality-config.yaml
+14:56
+app:cc-drafe-upcs-lambda### branch: main### build:42### deployed: wi-stage### commitMessage: fixed tests
+15:54
+app:dra-ui### branch: main### build:97### deployed: wi-stage### commitMessage: Remove redundant logs that is crashing automation testing (#614)
+00:16
+app:cc-drafe-upcs-lambda### branch: main### build:45### deployed: wi-stage### commitMessage: turning off smoke test temporarily
+00:17
+cc-drafe-upcs-lambda### branch: main### build:46### deployed: wi-stage### commitMessage: turning off smoke test temporarily
+00:33
+app:cc-drafe-upcs-lambda### branch: main### build:47### deployed: wi-stage### commitMessage: fixed object destructuring error
+00:57
+app:cc-drafe-upcs-lambda### branch: main### build:48### deployed: wi-stage### commitMessage: fixed xlsx casing
+09:06
+app:dra-ui### branch: main### build:98### deployed: wi-stage### commitMessage: Pmedra 2384 (#613)
+10:04
+app:cc-drafe-upcs-lambda### branch: main### build:50### deployed: wi-stage### commitMessage: added attributes to first row of each product in the upc file (#24)
+10:12
+app:cc-drafe-attributes-lambda### branch: main### build:30### deployed: wi-stage### commitMessage: fixed xlsx casing (#22)
+13:33
+app:dra-indexing-product-message-lambda### branch: terraform### build:46### deployed: wi-stage### commitMessage: dbulla_terraform_double_memory_size (#6)
+13:34
+dra-indexing-missing-product-data-lambda### branch: terraform### build:8### deployed: wi-stage### commitMessage: Update quality-config.yaml
+13:35
+dra-indexing-persist-sellin-order-lambda### branch: terraform### build:5### deployed: wi-stage### commitMessage: dbulla_terraform_increase_memory_size (#10)
+13:35
+drafe-subscription-converter-lambda### branch: terraform### build:4### deployed: wi-stage### commitMessage: increase memory size (#12)
+13:46
+app:drafe-subscription-converter-lambda### branch: terraform### build:5### deployed: wi-stage### commitMessage: increase memory size (#12)
+15:15
+app:cc-drafe-api-handler-lambda### branch: main### build:122### deployed: wi-stage### commitMessage: turned smoke test back on
+09:49
+app:cc-drafe-subscription-converter-lambda### branch: main### build:23### deployed: wi-stage### commitMessage: updated resolutions and shared-es version (#13)
+10:15
+app:dra-ui### branch: main### build:101### deployed: wi-stage### commitMessage: fixed gridwall subscriptions so that subscribing to a product-level asset only subscribes to that single product (#617)
+13:41
+app:dra-indexing-product-message-lambda### branch: terraform### build:48### deployed: wi-stage### commitMessage: dbulla_terraform_double_memory_size (#6)
+14:06
+app:cc-drafe-upcs-lambda### branch: main### build:51### deployed: wi-stage### commitMessage: User fix (#25)
+14:07
+dra-indexing-product-message-lambda### branch: terraform### build:49### deployed: wi-stage### commitMessage: dbulla_terraform_double_memory_size (#6)
+14:27
+app:cc-drafe-upcs-lambda### branch: main### build:52### deployed: wi-stage### commitMessage: fixed issue with data conversion
+13:28
+app:cc-drafe-api-handler-lambda### branch: main### build:124### deployed: wi-stage### commitMessage: updated shared-es
+13:45
+app:dra-ui### branch: main### build:104### deployed: wi-stage### commitMessage: Aurora image thumbnails (#621)
+09:53
+app:dra-indexing-persist-nsp-order-lambda### branch: terraform### build:6### deployed: wi-stage### commitMessage: added kinesis stream name and permissions (#15)
+10:01
+app:cc-dra-indexing-persist-nsp-order-lambda### branch: main### build:31### deployed: wi-stage### commitMessage: updated controllers version (#14)
+12:40
+app:dra-indexing-persist-sellin-order-lambda### branch: terraform### build:6### deployed: wi-stage### commitMessage: added indexing kinesis stream permissions (#11)
+12:43
+cc-dra-indexing-persist-sellin-order-lambda### branch: main### build:37### deployed: wi-stage### commitMessage: Update controllers (#12)
+13:27
+app:cc-dra-indexing-techsheet-poller### branch: main### build:126### deployed: wi-stage:
+13:30
+cc-dra-indexing-dam-poller### branch: main### build:106### deployed: wi-stage:
+13:30
+cc-dra-indexing-aurora-poller### branch: main### build:30### deployed: wi-stage:
+14:28
+app:cc-dra-indexing-scene7-poller### branch: main### build:46### deployed: wi-stage:
+14:28
+cc-dra-indexing-dotcom-poller### branch: main### build:12### deployed: wi-stage:
+15:28
+app:dra-indexing-missing-assets-lambda### branch: terraform### build:10### deployed: wi-stage### commitMessage: added kinesis permission (#14)
+15:28
+dra-indexing-missing-product-data-lambda### branch: terraform### build:9### deployed: wi-stage### commitMessage: added kinesis permissions (#15)
+15:34
+app:cc-dra-indexing-missing-assets-lambda### branch: main### build:27### deployed: wi-stage### commitMessage: updated controllers version (#15)
+15:34
+cc-dra-indexing-missing-product-data-lambda### branch: main### build:37### deployed: wi-stage### commitMessage: updated controllers version to use kinesis (#16)
+15:36
+dra-indexing-data-cleanup-lambda### branch: terraform### build:4### deployed: wi-stage### commitMessage: added kinesis permission (#5)
+15:48
+app:cc-dra-indexing-data-cleanup-lambda### branch: main### build:17### deployed: wi-stage### commitMessage: updated controllers version (#6)
+16:56
+app:cc-dra-postgres-logrepl### branch: main### build:101### deployed: wi-stage:
+17:21
+app:cc-dra-indexing-product-delete-lambda### branch: main### build:28### deployed: wi-stage### commitMessage: changed handler to pull in product code instead of product
+17:22
+cc-dra-indexing-gate### branch: main### build:84### deployed: wi-stage:
+10:38
+app:dra-indexing-api### branch: terraform### build:17### deployed: wi-stage### commitMessage: update env vars
+10:43
+cc-dra-indexing-api### branch: main### build:17### deployed: wi-stage### commitMessage: by pass unit testing for now
+10:44
+cc-dra-indexing-api-authorizer### branch: main### build:1### deployed: wi-stage### commitMessage: initial commit
+13:50
+app:cc-dra-indexing-persist-sellin-order-lambda### branch: main### build:38### deployed: wi-stage### commitMessage: Update controllers (#12)
+14:11
+app:cc-dra-indexing-persist-sellin-order-lambda### branch: main### build:39### deployed: wi-stage### commitMessage: Update controllers (#12)
+14:26
+app:cc-dra-indexing-persist-sellin-order-lambda### branch: main### build:40### deployed: wi-stage### commitMessage: Update controllers (#12)
+15:29
+app:cc-dra-indexing-gate### branch: main### build:85### deployed: wi-stage:
+09:58
+app:cc-dra-indexing-gate### branch: main### build:86### deployed: wi-stage:
+10:35
+app:dra-indexing-persist-sellin-order-lambda### branch: terraform### build:7### deployed: wi-stage### commitMessage: added indexing kinesis stream permissions (#11)
+10:54
+app:dra-indexing-product-message-lambda### branch: terraform### build:50### deployed: wi-stage### commitMessage: added kinesis permissions
+11:13
+app:cc-dra-indexing-product-message-lambda### branch: main### build:25### deployed: wi-stage### commitMessage: updated controllers version
+11:24
+app:cc-dra-indexing-product-message-lambda### branch: main### build:27### deployed: wi-stage### commitMessage: updated controllers version
+11:53
+app:cc-dra-indexing-product-message-lambda### branch: main### build:30### deployed: wi-stage### commitMessage: using waffle iron jenkins lib
+14:05
+app:cc-dra-indexing-gate### branch: main### build:88### deployed: wi-stage:
+11:54
+app:cc-dra-postgres-logrepl### branch: main### build:102### deployed: wi-stage:
+12:36
+app:cc-dra-postgres-logrepl### branch: main### build:103### deployed: wi-stage:
+17:01
+app:dra-ui### branch: main### build:106### deployed: wi-stage### commitMessage: Pmedra 2440 (#622)
+18:02
+app:cc-dra-indexing-gate### branch: main### build:90### deployed: wi-stage:
+08:18
+app:dra-ui### branch: main### build:111### deployed: wi-stage### commitMessage: Update SubscriptionModalBody.tsx (#627)
+17:34
+app:cc-signalfx-dashboards### branch: main### build:
+### deployed: wi-stage### commitMessage: Initial implementation (#2)
+09:31
+app:dra-indexing-persist-sellin-order-lambda### branch: terraform### build:11### deployed: wi-stage### commitMessage: Increase memory size (#13)
+09:34
+drafe-brand-image-lambda### branch: terraform### build:8### deployed: wi-stage### commitMessage: increase memory size from default (#12)
+09:36
+cc-dra-indexing-gate### branch: main### build:92### deployed: wi-stage:
+10:45
+app:cc-dra-indexing-dam-poller### branch: main### build:107### deployed: wi-stage:
+11:06
+app:cc-drafe-upcs-lambda### branch: main### build:53### deployed: wi-stage### commitMessage: Null check on attributes (#26)
+15:25
+app:cc-signalfx-dashboards### branch: main### build:5### deployed: wi-stage### commitMessage: Signalfx dashboards implementation (#5)
+11:16
+app:cc-dra-indexing-gate### branch: main### build:93### deployed: wi-stage:
+11:41
+app:cc-dra-indexing-gate### branch: main### build:94### deployed: wi-stage:
+17:45
+app:cc-dra-indexing-scene7-poller### branch: main### build:47### deployed: wi-stage:
+09:05
+app:cc-dra-indexing-scene7-poller### branch: main### build:48### deployed: wi-stage:
+15:15
+app:cc-dra-indexing-dotcom-poller### branch: main### build:13### deployed: wi-stage:
+10:05
+app:cc-dra-indexing-dotcom-poller### branch: main### build:14### deployed: wi-stage:
+10:16
+app:cc-dra-indexing-missing-assets-lambda### branch: main### build:28### deployed: wi-stage### commitMessage: updated shared dotcom version (#16)
+13:12
+app:cc-dra-indexing-gate### branch: main### build:95### deployed: wi-stage:
+16:57
+app:cc-signalfx-dashboards### branch: main### build:6### deployed: wi-stage### commitMessage: Signalfx dashboards implementation (#6)
+10:21
+app:cc-dra-indexing-gate### branch: main### build:97### deployed: wi-stage:
+14:40
+app:cc-dra-indexing-persist-sellin-order-lambda### branch: main### build:41### deployed: wi-stage### commitMessage: bump shared lib version to fix duplicate key errors in logs (#14)
+14:42
+cc-dra-indexing-persist-nsp-order-lambda### branch: main### build:32### deployed: wi-stage### commitMessage: dbulla/PMEDRA-2460_duplicate_key_errors (#16)
+09:34
+app:cc-signalfx-dashboards### branch: main### build:11### deployed: wi-stage### commitMessage: Signalfx dashboards implementation (#8)
+11:20
+app:dra-ui### branch: main### build:113### deployed: wi-stage### commitMessage: Update Filters.tsx (#629)
+12:50
+app:infrastructure-dra-indexing-postgres### branch: main### build:37### deployed: wi-stage### commitMessage: added first indexed at columns to products and assets (#29)
+09:49
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:106### deployed: wi-stage### commitMessage: removed all unnecessary elasticsearch queries, moved indexing logic from shared-es into lambda (#18)
+11:05
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:107### deployed: wi-stage### commitMessage: updated dependency
+11:56
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:108### deployed: wi-stage### commitMessage: updated controllers version
+12:20
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:109### deployed: wi-stage### commitMessage: process each product sequentially to avoid overloading es
+12:32
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:110### deployed: wi-stage### commitMessage: removed extra logs
+13:04
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:112### deployed: wi-stage### commitMessage: fixed lint error
+13:32
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:113### deployed: wi-stage### commitMessage: improved logs
+14:28
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:114### deployed: wi-stage### commitMessage: index all products at once
+16:12
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:115### deployed: wi-stage### commitMessage: retrieve all style-level attributes in one call
+16:43
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:116### deployed: wi-stage### commitMessage: added more logs
+17:49
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:117### deployed: wi-stage### commitMessage: fetch all products in one call
+10:00
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:118### deployed: wi-stage### commitMessage: bulk query for all assets at once
+11:55
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:120### deployed: wi-stage### commitMessage: updated controllers
+12:11
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:121### deployed: wi-stage### commitMessage: updated controllers
+12:22
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:122### deployed: wi-stage### commitMessage: removed extra logs
+12:39
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:123### deployed: wi-stage### commitMessage: lowered index chunk size to 500
+13:03
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:124### deployed: wi-stage### commitMessage: wrapped index call in try catch, log failed documents
+13:22
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:125### deployed: wi-stage### commitMessage: removed use of async foreach
+13:50
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:126### deployed: wi-stage### commitMessage: logging chunk size, lowered chunk size to 100
+14:27
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:127### deployed: wi-stage### commitMessage: manually chunk documents based on byte size
+14:47
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:128### deployed: wi-stage### commitMessage: sleep between indexing calls
+15:12
+app:dra-indexing-product-indexer-lambda### branch: terraform### build:14### deployed: wi-stage### commitMessage: dropped concurrency to 25
+16:46
+app:cc-dra-indexing-gate### branch: main### build:98### deployed: wi-stage:
+16:46
+cc-dra-indexing-product-indexer-lambda### branch: main### build:129### deployed: wi-stage### commitMessage: logging first indexed at
+17:18
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:131### deployed: wi-stage### commitMessage: lowering bulk byte limit to 500 MB
+00:07
+app:dra-indexing-product-indexer-lambda### branch: terraform### build:16### deployed: wi-stage### commitMessage: reducing concurrency to 10
+10:46
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:132### deployed: wi-stage### commitMessage: setting chunk limit to around 10MB
+12:17
+app:cc-dra-indexing-gate### branch: main### build:99### deployed: wi-stage:
+13:09
+app:cc-dra-indexing-gate### branch: main### build:100### deployed: wi-stage:
+14:25
+app:cc-dra-indexing-gate### branch: main### build:101### deployed: wi-stage:
+16:59
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:135### deployed: wi-stage### commitMessage: Update handler.ts (#19)
+14:13
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:136### deployed: wi-stage### commitMessage: Update handler.ts (#20)
+15:18
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:137### deployed: wi-stage### commitMessage: Update handler.ts
+09:53
+app:dra-indexing-product-indexer-lambda### branch: terraform### build:18### deployed: wi-stage### commitMessage: Update variables.tf (#21)
+10:41
+app:cc-drafe-api-handler-lambda### branch: main### build:126### deployed: wi-stage### commitMessage: Package structure (#80)
+10:43
+dra-ui### branch: main### build:117### deployed: wi-stage### commitMessage: Package settings (#633)
+11:12
+app:cc-drafe-gzip### branch: main### build:61### deployed: wi-stage:
+12:27
+app:cc-drafe-gzip### branch: main### build:62### deployed: wi-stage:
+14:16
+app:cc-dra-indexing-missing-product-data-lambda### branch: main### build:38### deployed: wi-stage### commitMessage: removed log
+10:06
+app:cc-dra-indexing-scene7-poller### branch: main### build:49### deployed: wi-stage:
+10:47
+app:cc-dra-indexing-missing-assets-lambda### branch: main### build:31### deployed: wi-stage### commitMessage: updated shared-scene7 version to latest
+12:52
+app:dra-ui### branch: main### build:118### deployed: wi-stage### commitMessage: request package structure settings in user context call (#634)
+12:37
+app:dra-ui### branch: main### build:119### deployed: wi-stage### commitMessage: Pmedra 2138 (#635)
+00:40
+app:cc-drafe-gzip### branch: main### build:65### deployed: wi-stage:
+01:53
+app:cc-drafe-gzip### branch: main### build:66### deployed: wi-stage:
+02:37
+app:cc-drafe-gzip### branch: main### build:67### deployed: wi-stage:
+17:29
+app:cc-signalfx-dashboards### branch: main### build:17### deployed: wi-stage### commitMessage: added all the DRA indexing function to dashboard_Dra_indexing (#11)
+03:27
+app:cc-drafe-gzip### branch: main### build:68### deployed: wi-stage:
+04:08
+app:cc-drafe-gzip### branch: main### build:69### deployed: wi-stage:
+14:04
+app:cc-drafe-gzip### branch: main### build:70### deployed: wi-stage:
+14:38
+app:cc-drafe-gzip### branch: main### build:71### deployed: wi-stage:
+15:26
+app:cc-drafe-gzip### branch: main### build:72### deployed: wi-stage:
+15:59
+app:cc-drafe-gzip### branch: main### build:73### deployed: wi-stage:
+16:28
+app:cc-drafe-gzip### branch: main### build:74### deployed: wi-stage:
+22:19
+app:cc-drafe-gzip### branch: main### build:77### deployed: wi-stage:
+06:09
+app:cc-signalfx-dashboards### branch: main### build:18### deployed: wi-stage### commitMessage: Merge branch 'main' of https://github.com/nike-dra/signalfx-dashboard… (#12)
+12:46
+app:cc-drafe-gzip### branch: main### build:79### deployed: wi-stage:
+13:46
+app:cc-drafe-gzip### branch: main### build:80### deployed: wi-stage:
+14:24
+app:cc-drafe-gzip### branch: main### build:82### deployed: wi-stage:
+12:41
+app:cc-drafe-api-handler### branch: main### build:147### deployed: wi-stage:
+12:52
+app:dra-ui### branch: main### build:120### deployed: wi-stage### commitMessage: fetch assets from new endpoint for streaming (#636)
+14:36
+app:cc-drafe-api-handler### branch: main### build:148### deployed: wi-stage:
+17:46
+app:dra-ui### branch: main### build:121### deployed: wi-stage### commitMessage: increase max limit for perf testing (#638)
+12:57
+app:cc-signalfx-dashboards### branch: main### build:19### deployed: wi-stage### commitMessage: Develop (#13)
+09:06
+app:dra-ui### branch: main### build:122### deployed: wi-stage### commitMessage: Update Package.tsx (#637)
+10:00
+app:cc-drafe-api-handler### branch: main### build:149### deployed: wi-stage:
+10:34
+app:dra-ui### branch: main### build:123### deployed: wi-stage### commitMessage: Update Package.tsx (#637)
+13:04
+app:cc-drafe-api-handler### branch: main### build:150### deployed: wi-stage:
+13:50
+app:cc-drafe-api-handler### branch: main### build:151### deployed: wi-stage:
+10:30
+app:cc-drafe-api-handler### branch: main### build:152### deployed: wi-stage:
+19:19
+app:dra-ui### branch: main### build:129### deployed: wi-stage### commitMessage: removed mst list (#642)
+15:36
+app:dra-indexing-product-delete-lambda### branch: terraform### build:
+### deployed: wi-stage### commitMessage: Update lambda.tf (#8)
+10:20
+app:cc-drafe-attributes-lambda### branch: main### build:32### deployed: wi-stage### commitMessage: Multi languages (#24)
+10:33
+app:cc-drafe-api-handler### branch: main### build:156### deployed: wi-stage:
+13:43
+app:cc-drafe-api-handler### branch: main### build:160### deployed: wi-stage:
+14:47
+app:cc-dra-indexing-missing-product-data-lambda### branch: main### build:39### deployed: wi-stage### commitMessage: catch empty bodies and exit
+14:55
+app:cc-dra-indexing-gate### branch: main### build:102### deployed: wi-stage:
+15:26
+app:cc-drafe-api-handler### branch: main### build:161### deployed: wi-stage:
+09:41
+app:cc-imageapi-api-handler### branch: main### build:5### deployed: wi-stage### commitMessage: updated dependencies (#6)
+10:57
+app:cc-orderbook-api-api-handler### branch: main### build:6### deployed: wi-stage### commitMessage: added error logging to server response (
+)
+13:09
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:145### deployed: wi-stage### commitMessage: updated yarn lock
+11:46
+app:cc-orderbook-api-api-handler### branch: main### build:7### deployed: wi-stage### commitMessage: Update event.json (#5)
+14:40
+app:cc-drafe-api-handler### branch: main### build:164### deployed: wi-stage:
+14:41
+dra-ui### branch: main### build:131### deployed: wi-stage### commitMessage: createRequest Enhancements (#644)
+18:32
+app:cc-drafe-api-handler### branch: main### build:166### deployed: wi-stage:
+18:53
+app:cc-drafe-api-handler### branch: main### build:167### deployed: wi-stage:
+11:59
+app:cc-drafe-videos-lambda### branch: main### build:22### deployed: wi-stage### commitMessage: File size (#11)
+12:04
+app:cc-drafe-brand-image-lambda### branch: main### build:19### deployed: wi-stage### commitMessage: File size (#13)
+12:10
+app:cc-drafe-techsheet-lambda### branch: main### build:22### deployed: wi-stage### commitMessage: File size (#17)
+13:32
+app:cc-drafe-image-lambda### branch: main### build:28### deployed: wi-stage### commitMessage: File size (#18)
+13:38
+app:cc-drafe-gzip### branch: main### build:90### deployed: wi-stage:
+15:28
+app:cc-drafe-gzip### branch: main### build:93### deployed: wi-stage:
+15:36
+app:cc-drafe-gzip### branch: main### build:96### deployed: wi-stage:
+16:52
+app:cc-drafe-get-asset-status-lambda### branch: main### build:17### deployed: wi-stage### commitMessage: fix loop conditions in state machine (#7)
+16:55
+cc-drafe-statemachine-get-request-status-lambda### branch: main### build:18### deployed: wi-stage### commitMessage: fix statemachine loop errors (#9)
+18:35
+app:cc-drafe-gzip### branch: main### build:97### deployed: wi-stage:
+10:52
+app:dra-ui### branch: main### build:132### deployed: wi-stage### commitMessage: Kleena/dra 871 (#645)
+10:18
+app:cc-drafe-api-handler### branch: main### build:168### deployed: wi-stage:
+15:27
+app:cc-drafe-kinesis-reader-lambda### branch: main### build:36### deployed: wi-stage### commitMessage: deploy changes for enhancements (#8)
+15:00
+app:drafe-kinesis-reader-lambda### branch: terraform### build:7### deployed: wi-stage### commitMessage: increase batch size from kinesis reader (#9)
+18:07
+app:drafe-gzip-lambda### branch: terraform### build:8### deployed: wi-stage### commitMessage: updated .gitignore
+21:06
+app:drafe-gzip-lambda### branch: terraform### build:9### deployed: wi-stage### commitMessage: bumped memory
+11:39
+app:dra-indexing-product-indexer-lambda### branch: terraform### build:19### deployed: wi-stage### commitMessage: add the reader hosts (#25)
+11:40
+cc-dra-indexing-product-indexer-lambda### branch: main### build:146### deployed: wi-stage### commitMessage: update indexing controllers (#24)
+10:46
+app:dra-ui### branch: main### build:133### deployed: wi-stage### commitMessage: PMEDRA-2509_Update UI for multi-language/currencies (#646)
+10:12
+app:dra-ui### branch: main### build:134### deployed: wi-stage### commitMessage: PMEDRA-2509_Update UI for multi-language/currencies (#646)
+10:31
+app:cc-drafe-api-handler### branch: main### build:170### deployed: wi-stage:
+16:11
+app:cc-drafe-api-handler### branch: main### build:173### deployed: wi-stage:
+16:12
+cc-drafe-attributes-lambda### branch: main### build:34### deployed: wi-stage### commitMessage: Clean copy (#26)
+14:32
+app:cc-imageproxy### branch: main### build:49### deployed: wi-stage### commitMessage: updated file-type version
+15:00
+app:cc-dra-indexing-product-indexer-lambda### branch: main### build:149### deployed: wi-stage### commitMessage: added try catch
+18:19
+app:cc-dra-indexing-missing-assets-lambda### branch: main### build:32### deployed: wi-stage### commitMessage: Remove dotcom (#17)
+19:09
+app:dra-indexing-missing-assets-lambda### branch: terraform### build:11### deployed: wi-stage### commitMessage: set pg reader host env var
+20:58
+app:dra-imageproxy### branch: terraform### build:63### deployed: wi-stage### commitMessage: set deployment environment var
+21:00
+dra-indexing-product-indexer-lambda### branch: terraform### build:22### deployed: wi-stage### commitMessage: reverted batch size
+21:13
+app:dra-imageproxy### branch: terraform### build:65### deployed: wi-stage### commitMessage: added permissions for secrets manager access
+09:31
+app:dra-ui### branch: main### build:135### deployed: wi-stage### commitMessage: Pmedra 2512 (#647)
+14:57
+app:dra-imageapi### branch: main### build:58### deployed: wi-stage### commitMessage: fix domain endpoints (#14)
+17:11
+app:cc-imageapi-authorizer### branch: main### build:9### deployed: wi-stage### commitMessage: Scope check (#5)
+13:36
+app:drafe-gzip-lambda### branch: terraform### build:10### deployed: wi-stage### commitMessage: terraform_right-size_memory (#9)
+13:39
+dra-indexing-missing-assets-lambda### branch: terraform### build:13### deployed: wi-stage### commitMessage: Merge pull request #18
+14:11
+app:dra-indexing-missing-product-data-lambda### branch: terraform### build:10### deployed: wi-stage### commitMessage: update secret source to env (#17)
+10:22
+app:cc-imageapi-authorizer### branch: main### build:10### deployed: wi-stage### commitMessage: Scope check (#5)
+10:43
+app:dra-ui### branch: main### build:136### deployed: wi-stage### commitMessage: Launch date (#648)
+10:50
+app:cc-drafe-api-handler### branch: main### build:175### deployed: wi-stage:
+12:00
+app:drafe-gzip-lambda### branch: terraform### build:13### deployed: wi-stage### commitMessage: bumped up memory again to account for increased Dynamo calls
+10:51
+app:dra-imageapi### branch: main### build:61### deployed: wi-stage### commitMessage: remove authorizer and roles
+10:53
+cc-imageapi-api-handler### branch: main### build:10### deployed: wi-stage### commitMessage: reduce package size
+11:39
+app:dra-imageapi### branch: main### build:64### deployed: wi-stage### commitMessage: fix issuer
+11:52
+app:dra-imageapi### branch: main### build:65### deployed: wi-stage### commitMessage: fix issuer
+12:05
+app:dra-imageapi### branch: main### build:66### deployed: wi-stage### commitMessage: fix issuer
+13:37
+app:dra-imageproxy### branch: terraform### build:67### deployed: wi-stage### commitMessage: fixed service token issuer
+13:44
+app:cc-imageproxy### branch: main### build:50### deployed: wi-stage### commitMessage: Merge pull request #2 from nike-dra/add-shared-authorizer
+15:22
+app:drafe-stepfunction-trigger-lambda### branch: terraform### build: 1### deployed: wi-stage### commitMessage: bump memory size
+14:09
+app:dra-indexing-product-message-lambda### branch: terraform### build:51### deployed: wi-stage### commitMessage: increase timeout (#7)
+08:57
+app:cc-drafe-gzip-lambda### branch: main### build:22### deployed: wi-stage### commitMessage: fixed manifest name
+08:58
+cc-drafe-api-handler### branch: main### build:176### deployed: wi-stage:
+09:00
+dra-ui### branch: main### build:138### deployed: wi-stage### commitMessage: Split zip (#649)
+09:00
+cc-drafe-gzip### branch: main### build:100### deployed: wi-stage:
+15:37
+app:infrastructure-dra-indexing-postgres### branch: main### build:39### deployed: wi-stage### commitMessage: cleanup, and making major upgrades false again
+14:03
+app:infrastructure-dra-indexing-postgres### branch: main### build:40### deployed: wi-stage### commitMessage: bump readers up
+14:46
+app:dra-ui### branch: main### build:139### deployed: wi-stage### commitMessage: rearranged filters to match futures (#650)
+10:33
+app:infrastructure-dra-indexing-postgres### branch: main### build:41### deployed: wi-stage### commitMessage: downsize dev/qa
+14:22
+app:dra-ui### branch: main### build:140### deployed: wi-stage### commitMessage: allow for 150k downloads (#651)
+09:52
+app:dra-indexing-api### branch: terraform### build:23### deployed: wi-stage### commitMessage: removed outside authorizer Terraform
+09:56
+cc-dra-indexing-api### branch: main### build:18### deployed: wi-stage### commitMessage: Download delete endpoint (#1)
+13:16
+app:cc-dra-indexing-missing-assets-lambda### branch: main### build:33### deployed: wi-stage### commitMessage: updated shared versions to avoid vp images
+13:42
+app:cc-dra-indexing-aurora-poller### branch: main### build:33### deployed: wi-stage:
+09:47
+app:dra-ui### branch: main### build:141### deployed: wi-stage### commitMessage: added margin-bottom to grid-items-sub-header so header exits up at second to bottom row (#653)
+12:56
+app:infrastructure-dra-indexing-postgres### branch: main### build:42### deployed: wi-stage### commitMessage: downsize stage
+09:10
+app:infrastructure-dra-indexing-postgres### branch: main### build:43### deployed: wi-stage### commitMessage: downsize QA and Prod
+12:42
+app:cc-drafe-api-handler### branch: main### build:178### deployed: wi-stage:
+01:38
+app:cc-drafe-api-handler### branch: main### build:181### deployed: wi-stage:
+11:40
+app:cc-drafe-brand-image-lambda### branch: main### build:20### deployed: wi-stage### commitMessage: Asset cache (#14)
+11:40
+cc-drafe-image-lambda### branch: main### build:29### deployed: wi-stage### commitMessage: Asset cache (#19)
+11:40
+cc-drafe-videos-lambda### branch: main### build:23### deployed: wi-stage### commitMessage: Asset cache (#12)
+11:40
+cc-drafe-techsheet-lambda### branch: main### build:23### deployed: wi-stage### commitMessage: added asset caching (#18)
+10:30
+app:infrastructure-dra-indexing-postgres### branch: main### build:45### deployed: wi-stage### commitMessage: Ignore all tag changes
+10:42
+app:infrastructure-dra-indexing-postgres### branch: main### build:46### deployed: wi-stage### commitMessage: Removing replication slots
+10:48
+app:infrastructure-dra-indexing-postgres### branch: main### build:47### deployed: wi-stage### commitMessage: Removing replication slots
+11:30
+app:drafe-statemachine-get-request-status-lambda### branch: main### build:19### deployed: wi-stage:
+11:30
+cc-drafe-statemachine-get-request-status-lambda### branch: main### build:19### deployed: wi-stage### commitMessage: Node 18/Yarn 3/AWS SDK v3 (#10)
+15:23
+app:drafe-common### branch: main### build:16### deployed: wi-stage### commitMessage: changed start status of request in step function to processing (#6)
+15:27
+dra-es-infrastructure### branch: main### build:17### deployed: wi-stage### commitMessage: removed create manifest sqs, changed attributes & upcs sqs triggers to event type processing (#205)
+16:44
+app:cc-dra-indexing-dam-poller### branch: main### build:108### deployed: wi-stage:
+10:57
+app:dra-ui### branch: main### build:145### deployed: wi-stage### commitMessage: guarantee unique manifest key (#657)
+15:54
+app:cc-dra-indexing-dam-poller### branch: main### build:109### deployed: wi-stage:
+10:25
+app:cc-dra-indexing-aurora-poller### branch: main### build:35### deployed: wi-stage:
+16:06
+app:cc-dra-indexing-dam-poller### branch: main### build:110### deployed: wi-stage:
+13:58
+app:cc-dra-indexing-gate### branch: main### build:103### deployed: wi-stage:
+
+#12:42
+##APP
+#app:infrastructure-dra-indexing-postgres###### build:46###### deployed: wi-prod###### commitMessage: Removing replication slots, now for something completely different### author: dbulla
+

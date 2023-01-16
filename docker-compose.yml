@@ -7,5 +7,10 @@ services:
       POSTGRES_DB: "releaseTracker"
       POSTGRES_USER: "me"
       POSTGRES_PASSWORD: "noPassword"
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - type: bind
+        source: postgres-data
+        target: /var/lib/postgresql/data
     ports:
       - "5432:5432"
