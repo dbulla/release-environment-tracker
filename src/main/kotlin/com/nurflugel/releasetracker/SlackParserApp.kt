@@ -74,7 +74,7 @@ class SlackParserApp(@Autowired val jdbcTemplate: JdbcTemplate) : CommandLineRun
     val lines = textToProcess.split('\n')
     return lines
       .filter { it.startsWith("app:") }
-      .filter { !it.startsWith("app: cc-") }
+      .filter { !it.startsWith("app: dibble") }
       .map { DataRecord(it) }
   }
 
