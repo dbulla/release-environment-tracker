@@ -59,33 +59,8 @@ class SlackParserApp(@Autowired val jdbcTemplate: JdbcTemplate) : CommandLineRun
               ON CONFLICT (app_name, build_number, environment) DO UPDATE
                 SET deploy_date = excluded.deploy_date;
                 """).trimIndent();
-      //      val sql2 = "INSERT INTO deploys (app_name, build_number, author, commit_message, deploy_date,environment,story) VALUES (?,?,?,?,?,?,?) ON CONFLICT (app_name, build_number, environment) DO UPDATE SET deploy_date = excluded.deploy_date;";
       try {
         jdbcTemplate.update(sql)
-        //        val template = NamedParameterJdbcTemplate(jdbcTemplate.dataSource!!)
-        //
-        //        val sql = "INSERT INTO deploys (app_name, build_number, author, commit_message, deploy_date,environment,story) VALUES (:appName,:buildNumber,:author,:commitMessage,:deployDate,:environment,:story) ON CONFLICT (app_name, build_number, environment) DO UPDATE SET deploy_date = excluded.deploy_date;";
-        //
-        //
-        //        val params: MutableMap<String, String> = HashMap()
-        //
-        //        params["appName"] = datum.appName
-        //        params["buildNumber"] = datum.buildNumber.toString()
-        //        params["author"] = datum.author
-        //        params["commitMessage"] = datum.commitMessage
-        //        params["deployDate"] = datum.date.toString()
-        //        params["environment"] = datum.deployEnvironment.toString()
-        //        params["story"] = datum.story.toString()
-        //        params["appName"] = datum.appName
-        //        params["appName"] = datum.appName
-        //        params["appName"] = datum.appName
-        //
-        //        template.update(sql, params)
-
-
-        //        jdbcTemplate.update(sql2, datum.appName, datum.buildNumber, datum.author, datum.commitMessage, date, datum.deployEnvironment, datum.story)
-
-
       } catch (e: Exception) {
         println("e.message = ${e.message}")
       }
