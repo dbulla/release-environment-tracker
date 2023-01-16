@@ -886,7 +886,7 @@ cc-drafe-statemachine-get-request-status-lambda### branch: main### build:19### d
 15:23
 app:drafe-common### branch: main### build:16### deployed: wi-stage### commitMessage: changed start status of request in step function to processing (#6)
 15:27
-dra-es-infrastructure### branch: main### build:17### deployed: wi-stage### commitMessage: removed create manifest sqs, changed attributes & upcs sqs triggers to event type processing (#205)
+app:dra-es-infrastructure### branch: main### build:17### deployed: wi-stage### commitMessage: removed create manifest sqs, changed attributes & upcs sqs triggers to event type processing (#205)
 16:44
 app:cc-dra-indexing-dam-poller### branch: main### build:108### deployed: wi-stage:
 10:57
@@ -898,9 +898,9 @@ app:cc-dra-indexing-aurora-poller### branch: main### build:35### deployed: wi-st
 16:06
 app:cc-dra-indexing-dam-poller### branch: main### build:110### deployed: wi-stage:
 13:58
-app:cc-dra-indexing-gate### branch: main### build:103### deployed: wi-stage:
+app:cc-dra-indexing-gate### branch: main### build:103### deployed: wi-stage:### date: 2023-01-15 17&26
 
 #12:42
 ##APP
-#app:infrastructure-dra-indexing-postgres###### build:46###### deployed: wi-prod###### commitMessage: Removing replication slots, now for something completely different### author: dbulla
+#app:infrastructure-dra-indexing-postgres###### build:46###### deployed: wi-prod###### commitMessage: Removing replication slots, now for something completely different### author: dbulla### date: 2023-01-15 17&26
 

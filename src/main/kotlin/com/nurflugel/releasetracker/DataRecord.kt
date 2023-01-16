@@ -1,6 +1,7 @@
 package com.nurflugel.releasetracker
 
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class DataRecord {
@@ -11,6 +12,7 @@ class DataRecord {
   var buildNumber: Int
   var appName: String
   var story: String?
+
 
   constructor(appName: String, buildNumber: Int, deployEnvironment: Environment, date: LocalDateTime?, commitMessage: String, author: String, story: String?) {
     this.appName = appName
@@ -51,9 +53,13 @@ class DataRecord {
     } catch (e: Exception) {
       TODO("Not yet implemented")
     }
-    this.date = null // LocalDateTime.now() //     valueMap["date"]
-    this.commitMessage =
-      valueMap["commitMessage"].toString().replace('\'', '"').trim()  //todo need to deal with SQL injection - when a message has 'main' or something in quotes....
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH&mm");
+    val possibleDate = valueMap["date"]
+    this.date = if (possibleDate != null) {
+      println("possibleDate = $possibleDate")
+      LocalDateTime.parse(possibleDate.trim(), formatter);
+    } else null
+    this.commitMessage = valueMap["commitMessage"].toString().replace('\'', '"').trim()
     this.author = valueMap["author"].toString().trim()
     this.story = parseStoryFromCommit(commitMessage)
   }

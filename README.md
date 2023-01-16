@@ -2,10 +2,10 @@
 
 Util tool to scrape env deploys from slack/email and track what was released where and when.
 
-It just reads in lines, expecting a format like this:
+It just reads in lines, expecting a format like this(note the delimiter between the hour and minute:
 
 ```
-#app:Some app name###### build:46###### deployed: prod###### commitMessage: And now for something completely different### author: dbulla
+#app:Some app name###### build:46###### deployed: prod###### commitMessage: And now for something completely different### author: dbulla ### date: 2023-01-15 17&26
 ```
 
 It puts the items into a database that's created in Docker.
