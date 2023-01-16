@@ -11,6 +11,7 @@
 //import org.jooq.meta.jaxb.Property
 import org.flywaydb.gradle.task.FlywayMigrateTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 var KOTEST_VERSION = "5.5.4"
 
@@ -100,7 +101,10 @@ val runFlyway by tasks.registering(FlywayMigrateTask::class) {
   locations = arrayOf("filesystem:${project.buildDir}/resources/main/sql")
 }
 
-
+tasks.getByName<BootJar>("bootJar") {
+  mainClass.set("com.nurflugel.releasetracker.SlackParserApp")
+  launchScript()
+}
 
 testing {
   suites {
