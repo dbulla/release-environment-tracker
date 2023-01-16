@@ -34,7 +34,7 @@ class DataRecord {
         val split = it.split(":")
         Pair(split[0], split[1].trim())
       }
-    this.appName = valueMap["app"].toString()
+    this.appName = valueMap["app"].toString().replace("cc-", "")
     this.buildNumber = parseBuildNumber(valueMap["build"].toString())
     this.deployEnvironment = parseEnvironment(valueMap["deployed"].toString())
     this.date = parseDate(valueMap["date"].toString())
