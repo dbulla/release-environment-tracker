@@ -1,5 +1,9 @@
 package com.nurflugel.releasetracker
 
 enum class Environment {
-  DEV, QA, STAGE, PROD
+  DEV,
+  QA,
+  STAGE,
+  PROD,
+  ARTIFACTORY
 }

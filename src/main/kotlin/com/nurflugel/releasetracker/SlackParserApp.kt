@@ -54,10 +54,12 @@ class SlackParserApp(@Autowired val jdbcTemplate: JdbcTemplate) : CommandLineRun
       }
       //      println("::::::::::::datum = ${datum.appName} ${datum.author} ${datum.commitMessage} ${datum.deployEnvironment} ${datum.story} ${datum.date} ")
       val sql = ("""
-              INSERT INTO deploys (app_name, build_number, author, commit_message, deploy_date,environment,story)
-              VALUES ('${datum.appName}','${datum.buildNumber}', '${datum.author}','${datum.commitMessage}','$date','${datum.deployEnvironment}','${datum.story}')
+              INSERT INTO deploys (app_name, build_number, author, commit_message, deploy_date, environment, story, version)
+              VALUES ('${datum.appName}','${datum.buildNumber}', '${datum.author}','${datum.commitMessage}','$date','${datum.deployEnvironment}','${datum.story}','${datum.version}')
               ON CONFLICT (app_name, build_number, environment) DO UPDATE
-                SET deploy_date = excluded.deploy_date;
+                 SET deploy_date = excluded.deploy_date,
+                     commit_message = excluded.commit_message,
+                     story = excluded.story;
                 """).trimIndent();
       try {
         jdbcTemplate.update(sql)

@@ -12,13 +12,23 @@ class DataRecord {
   var deployEnvironment: Environment
   var buildNumber: Int
   var appName: String
+  var version: String?
   var story: String?
 
   companion object {
     val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH&mm");
   }
 
-  constructor(appName: String, buildNumber: Int, deployEnvironment: Environment, date: LocalDateTime?, commitMessage: String, author: String, story: String?) {
+  constructor(
+    appName: String,
+    buildNumber: Int,
+    deployEnvironment: Environment,
+    date: LocalDateTime?,
+    commitMessage: String,
+    author: String,
+    story: String?,
+    version: String?,
+  ) {
     this.appName = appName
     this.buildNumber = buildNumber
     this.deployEnvironment = deployEnvironment
@@ -26,16 +36,17 @@ class DataRecord {
     this.commitMessage = commitMessage
     this.author = author
     this.story = story
+    this.version = version
   }
 
   constructor(text: String) {
-    val valueMap = text.split("### ")
-      .associate {
-        val split = it.split(":")
-        Pair(split[0], split[1].trim())
-      }
+    val valueMap = text.split("### ").associate {
+      val split = it.split(":")
+      Pair(split[0], split[1].trim())
+    }
     this.appName = valueMap["app"].toString().replace("cc-", "")
     this.buildNumber = parseBuildNumber(valueMap["build"].toString())
+    this.version = parseVersionNumber(valueMap["build"].toString())
     this.deployEnvironment = parseEnvironment(valueMap["deployed"].toString())
     this.date = parseDate(valueMap["date"].toString())
     this.author = valueMap["author"].toString()
@@ -48,20 +59,33 @@ class DataRecord {
   }
 
   private fun parseBuildNumber(possibleValue: String): Int {
+    //    println("parseBuildNumber = $possibleValue")
     try {
       return when {
         possibleValue.isBlank() -> 0
-        else                    -> Integer.parseInt(possibleValue)
+        else                    -> Integer.parseInt(possibleValue.substringBefore(" "))
       }
     } catch (e: Exception) {
-      TODO("Not yet implemented")
+      println("e = $e")
+      return 0
+    }
+  }
+
+  private fun parseVersionNumber(possibleValue: String): String? {
+    //    println("parseBuildNumber = $possibleValue")
+    return when {
+      possibleValue.isBlank() -> null
+      else                    -> {
+        val possibleVersion = possibleValue.substringAfter(" ")
+        if (possibleVersion.startsWith("v")) return possibleVersion
+        else return null
+      }
     }
   }
 
   private fun parseEnvironment(possibleValue: String): Environment {
-    val envText = possibleValue
-      .substringAfter("wi-")
-      .uppercase(Locale.getDefault())
+    //    println("parseEnvironment = $possibleValue")
+    val envText = possibleValue.substringAfter("wi-").uppercase(Locale.getDefault())
     try {
       return when {
         envText.isEmpty() -> STAGE
@@ -82,12 +106,10 @@ class DataRecord {
   }
 
   private fun parseStoryFromCommit(commitMessage: String): String? {
-    if (commitMessage.contains("PME")) {
-      val trimIt = commitMessage.substringBefore("PME")
-      return commitMessage
-        .substringAfter(trimIt)
-        .substringBefore(" ")
-        .substringBefore("_")
+    val uppercaseMessage = commitMessage.uppercase()
+    if (uppercaseMessage.contains("PME")) {
+      val indexOf = uppercaseMessage.indexOf("PME")
+      return commitMessage.substring(indexOf).substringBefore(" ").substringBefore("_")
     }
     return null
   }
