@@ -3,34 +3,27 @@
  */
 package com.nurflugel.releasetracker
 
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.Banner
-import org.springframework.boot.CommandLineRunner
-import org.springframework.boot.WebApplicationType
-import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.builder.SpringApplicationBuilder
 import org.springframework.jdbc.core.JdbcTemplate
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
+import org.springframework.stereotype.Component
 import java.awt.Toolkit
 import java.awt.datatransfer.DataFlavor.stringFlavor
 import java.lang.management.ManagementFactory
 import java.time.LocalDateTime
 
-@SpringBootApplication
 //class SlackParserApp(@Autowired val jdbcTemplate: JdbcTemplate) : CommandLineRunner {
-class SlackParserApp(@Autowired val jdbcTemplate: JdbcTemplate) : CommandLineRunner {
-  companion object {
-    @JvmStatic
-    fun main(args: Array<String>) {
-      SpringApplicationBuilder(SlackParserApp::class.java)
-        .web(WebApplicationType.NONE)
-        .headless(false)
-        .bannerMode(Banner.Mode.OFF)
-        .run()
-    }
-  }
+class SlackParserApp() {
+  //  companion object {
+  //    @JvmStatic
+  //    fun main(args: Array<String>) {
+  //      SpringApplicationBuilder(SlackParserApp::class.java)
+  //        .web(WebApplicationType.NONE)
+  //        .headless(false)
+  //        .bannerMode(Banner.Mode.OFF)
+  //        .run()
+  //    }
+  //  }
 
-  override fun run(vararg args: String?) {
+  fun run(jdbcTemplate: JdbcTemplate) {
 
     val runtimeMxBean = ManagementFactory.getRuntimeMXBean()
     val jvmArguments = runtimeMxBean.inputArguments.filter { it.startsWith("-X") }
@@ -39,13 +32,13 @@ class SlackParserApp(@Autowired val jdbcTemplate: JdbcTemplate) : CommandLineRun
     val textToProcess = getClipboardContents()
     if (textToProcess != null) {
       val newData: List<DataRecord> = parseData(textToProcess)
-      saveData(newData)
+      saveData(newData, jdbcTemplate)
     } else {
       println("No data found in buffer to process")
     }
   }
 
-  private fun saveData(newData: List<DataRecord>) {
+  private fun saveData(newData: List<DataRecord>, jdbcTemplate: JdbcTemplate) {
     println("newData size: ${newData.size}")
     for (datum in newData) {
       var date = datum.date

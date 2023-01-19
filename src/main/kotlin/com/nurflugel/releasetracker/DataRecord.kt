@@ -113,4 +113,8 @@ class DataRecord {
     }
     return null
   }
+
+  override fun toString(): String {
+    return "$appName $buildNumber $deployEnvironment $date"
+  }
 }

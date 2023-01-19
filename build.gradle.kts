@@ -69,6 +69,20 @@ tasks.withType<Test> {
   useJUnitPlatform()
 }
 
+val runPresentation by tasks.registering(JavaExec::class) {
+  group = "Release Tracker"
+  mainClass.set("com.nurflugel.releasetracker.ReleaseTrackerApp")
+  classpath = java.sourceSets["main"].runtimeClasspath
+  args = mutableListOf("-display")
+}
+
+val runSlackParser by tasks.registering(JavaExec::class) {
+  group = "Release Tracker"
+  mainClass.set("com.nurflugel.releasetracker.ReleaseTrackerApp")
+  classpath = java.sourceSets["main"].runtimeClasspath
+  args = mutableListOf("-parse")
+}
+
 val runFlyway by tasks.registering(FlywayMigrateTask::class) {
   dependsOn("processResources")
   description = "Run the Flyway migration"
@@ -79,8 +93,9 @@ val runFlyway by tasks.registering(FlywayMigrateTask::class) {
   locations = arrayOf("filesystem:${project.buildDir}/resources/main/sql")
 }
 
+
 tasks.getByName<BootJar>("bootJar") {
-  mainClass.set("com.nurflugel.releasetracker.SlackParserApp")
+  mainClass.set("com.nurflugel.releasetracker.ReleaseTrackerApp")
   launchScript()
 }
 
@@ -101,7 +116,7 @@ testing {
 
 application {
   // Define the main class for the application.
-  mainClass.set("com.nurflugel.releasetracker.SlackParserApp")
+  mainClass.set("com.nurflugel.releasetracker.ReleaseTrackerApp")
   group = "com.nurflugel"
   version = "0.0.1-SNAPSHOT"
 }

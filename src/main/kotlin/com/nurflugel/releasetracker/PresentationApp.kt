@@ -3,25 +3,84 @@
  */
 package com.nurflugel.releasetracker
 
-class PresentationApp {
-  companion object {
-    @JvmStatic
-    fun main(args: Array<String>) {
-      runTheApp(args)
-    }
 
-    private fun runTheApp(args: Array<String>) {
-      val data: List<DataRecord> = loadData(args)
-      presentData(data)
-    }
+import org.springframework.jdbc.core.JdbcTemplate
+import org.springframework.jdbc.core.RowMapper
+import java.sql.ResultSet
+import java.time.LocalDateTime
 
-    private fun loadData(args: Array<String>): List<DataRecord> {
-      TODO("Not yet implemented")
-    }
+class PresentationApp() {
+  //  companion object {
+  //    @JvmStatic
+  //    fun main(args: Array<String>) {
+  //      SpringApplicationBuilder(PresentationApp::class.java)
+  //        .web(WebApplicationType.NONE)
+  //        .headless(false)
+  //        .bannerMode(Banner.Mode.OFF)
+  //        .logStartupInfo(false).run()
+  //    }
+  //  }
 
-    private fun presentData(filteredData: List<DataRecord>) {
-      // create filter criteria - author, commit message match (story number), app(s), or all - also specify a time limit
-      TODO("Not yet implemented")
+  fun run(jdbcTemplate: JdbcTemplate) {
+    val records = loadData(jdbcTemplate)
+    val filteredData = filterData(records)
+    showData(filteredData)
+  }
+
+  private fun showData(filteredData: List<DataRecord>) {
+    for (datum in filteredData) {
+      val appName = String.format("App: %s", datum.appName).padEnd(45)
+      val deployEnvironment = String.format("Environment: %s", datum.deployEnvironment).padEnd(30)
+      val buildNumber = String.format("Build #: %d", datum.buildNumber).padEnd(15)
+      val story = String.format("Story: %s", datum.story).take(20).padEnd(30)
+      val commitMessage = String.format("Commit Message: %s", datum.commitMessage).take(60).padEnd(65)
+      val date = String.format("Date: %s", datum.date.toString())
+      val version = String.format("Version: %s", datum.version).padEnd(20)
+
+      val line = appName + deployEnvironment + buildNumber + commitMessage + version + story + date
+      println(line)
     }
   }
+
+  // take the raw data and:
+  //   show the latest build for each app, and what envs it's at - show the full record
+  private fun filterData(data: List<DataRecord>): List<DataRecord> {
+    val results = mutableListOf<DataRecord>()
+    val applicationDeployMap: Map<String, List<DataRecord>> = data.groupBy { it.appName }
+    val keys = applicationDeployMap.keys.sorted()
+    for (key in keys) {
+      val appDeploys: List<DataRecord> = applicationDeployMap[key]!!
+      // filter this so only the highest build number remains - note that we might also want to filter on commit message...
+      val maxBuild = appDeploys.map { it.buildNumber }.max()
+      val latestEnvsForBuild: List<DataRecord> = appDeploys.filter { it.buildNumber == maxBuild }
+      results.addAll(latestEnvsForBuild)
+    }
+    return results
+  }
+
+  private fun loadData(jdbcTemplate: JdbcTemplate): List<DataRecord> {
+    val sql: String = ("""
+              SELECT app_name, build_number, author, commit_message, deploy_date, environment, story, version 
+              FROM deploys
+                """).trimIndent();
+    //Declare rowMapper to map DB records to collection of Beer entities:
+    val rowMapper: RowMapper<DataRecord> = RowMapper<DataRecord> { resultSet: ResultSet, rowIndex: Int ->
+      val appName = resultSet.getString("app_name")
+      val buildNumber = resultSet.getInt("build_number")
+      val environmentAsString = resultSet.getString("environment")
+      val environment = Environment.valueOf(environmentAsString)
+      val timestamp = resultSet.getTimestamp("deploy_date")
+      val date: LocalDateTime = timestamp.toLocalDateTime()
+      val commitMessage = resultSet.getString("commit_message")
+      val author = resultSet.getString("commit_message")
+      val story = resultSet.getString("story")
+      val version = resultSet.getString("version")
+      val dataRecord = DataRecord(appName, buildNumber, environment, date, commitMessage, author, story, version)
+      dataRecord
+    }
+
+    val results: MutableList<DataRecord> = jdbcTemplate.query(sql, rowMapper)
+    return results
+  }
+
 }
