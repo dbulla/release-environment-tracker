@@ -32,7 +32,7 @@ This will be in the `build/libs` dir.
 
 First, copy the data you want added into the paste buffer. Then, just run
 
-`./gradlew runSlackParser`
+`./gradlew runParser`
 
 This copies the data from the paste buffer into the database.
 
@@ -41,6 +41,7 @@ This copies the data from the paste buffer into the database.
 If you've previously created a bootable jar, you can also run it like so:
 
 `./build/libs/release-environment-tracker-0.0.1-SNAPSHOT.jar -parse`
+Note: `-p` works, too
 
 ## Data Presentation
 
@@ -78,7 +79,7 @@ Included in the data is the commit message, story, author, date, etc.
 
 Run
 
-`./gradlew runPresentation`
+`./gradlew runDisplay`
 
 to run the built-in presentation of the data. This presents the data:
 
@@ -92,6 +93,11 @@ Included in the data is the commit message, story, author, date, etc.
 
 If you've previously created a bootable jar, you can also run it like so:
 `build/libs/release-environment-tracker-0.0.1-SNAPSHOT.jar -display`
+Note: `-d` works, too
 
+## Do it all
 
+Just running the command line with no args does BOTH tasks - parses any data in the buffer and then displays the
+database
+`build/libs/release-environment-tracker-0.0.1-SNAPSHOT.jar`
 

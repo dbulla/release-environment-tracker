@@ -3,23 +3,12 @@
  */
 package com.nurflugel.releasetracker
 
-
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.RowMapper
 import java.sql.ResultSet
 import java.time.LocalDateTime
 
-class PresentationApp() {
-  //  companion object {
-  //    @JvmStatic
-  //    fun main(args: Array<String>) {
-  //      SpringApplicationBuilder(PresentationApp::class.java)
-  //        .web(WebApplicationType.NONE)
-  //        .headless(false)
-  //        .bannerMode(Banner.Mode.OFF)
-  //        .logStartupInfo(false).run()
-  //    }
-  //  }
+class DisplayApp {
 
   fun run(jdbcTemplate: JdbcTemplate) {
     val records = loadData(jdbcTemplate)
@@ -28,17 +17,30 @@ class PresentationApp() {
   }
 
   private fun showData(filteredData: List<DataRecord>) {
+    var oldAppName: String? = null
+    println(
+      "\n\n\n  App".padEnd(45) + "   Environment".padEnd(30) + "Build #".padEnd(20) + "Commit Message".padEnd(65) + "   Version".padEnd(20) + "Story".padEnd(10) + "Date".padEnd(
+        15
+      )
+    )
     for (datum in filteredData) {
-      val appName = String.format("App: %s", datum.appName).padEnd(45)
-      val deployEnvironment = String.format("Environment: %s", datum.deployEnvironment).padEnd(30)
-      val buildNumber = String.format("Build #: %d", datum.buildNumber).padEnd(15)
-      val story = String.format("Story: %s", datum.story).take(20).padEnd(30)
-      val commitMessage = String.format("Commit Message: %s", datum.commitMessage).take(60).padEnd(65)
-      val date = String.format("Date: %s", datum.date.toString())
-      val version = String.format("Version: %s", datum.version).padEnd(20)
+      val appName = datum.appName.padEnd(45)
+      val deployEnvironment = datum.deployEnvironment.toString().padEnd(30)
+      val buildNumber = String.format("%d", datum.buildNumber).padEnd(15)
+      val story = datum.story
+                  ?: "".take(20).padEnd(45)
+      val commitMessage = (datum.commitMessage
+                           ?: "")
+        .take(60)
+        .padEnd(70)
+      val date = "   " + datum.date.toString().padEnd(15)
+      val version = "   " + datum.version?.padEnd(15)
 
       val line = appName + deployEnvironment + buildNumber + commitMessage + version + story + date
+      if (oldAppName != appName) println()
       println(line)
+      oldAppName = appName
+
     }
   }
 
@@ -79,8 +81,7 @@ class PresentationApp() {
       dataRecord
     }
 
-    val results: MutableList<DataRecord> = jdbcTemplate.query(sql, rowMapper)
-    return results
+    return jdbcTemplate.query(sql, rowMapper)
   }
 
 }

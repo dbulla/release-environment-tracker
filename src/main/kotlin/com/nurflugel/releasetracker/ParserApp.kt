@@ -4,24 +4,12 @@
 package com.nurflugel.releasetracker
 
 import org.springframework.jdbc.core.JdbcTemplate
-import org.springframework.stereotype.Component
 import java.awt.Toolkit
 import java.awt.datatransfer.DataFlavor.stringFlavor
 import java.lang.management.ManagementFactory
 import java.time.LocalDateTime
 
-//class SlackParserApp(@Autowired val jdbcTemplate: JdbcTemplate) : CommandLineRunner {
-class SlackParserApp() {
-  //  companion object {
-  //    @JvmStatic
-  //    fun main(args: Array<String>) {
-  //      SpringApplicationBuilder(SlackParserApp::class.java)
-  //        .web(WebApplicationType.NONE)
-  //        .headless(false)
-  //        .bannerMode(Banner.Mode.OFF)
-  //        .run()
-  //    }
-  //  }
+class ParserApp() {
 
   fun run(jdbcTemplate: JdbcTemplate) {
 
@@ -45,7 +33,6 @@ class SlackParserApp() {
       if (date == null) {
         date = LocalDateTime.now()
       }
-      //      println("::::::::::::datum = ${datum.appName} ${datum.author} ${datum.commitMessage} ${datum.deployEnvironment} ${datum.story} ${datum.date} ")
       val sql = ("""
               INSERT INTO deploys (app_name, build_number, author, commit_message, deploy_date, environment, story, version)
               VALUES ('${datum.appName}','${datum.buildNumber}', '${datum.author}','${datum.commitMessage}','$date','${datum.deployEnvironment}','${datum.story}','${datum.version}')

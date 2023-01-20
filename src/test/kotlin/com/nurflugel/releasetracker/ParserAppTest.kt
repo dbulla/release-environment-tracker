@@ -8,7 +8,7 @@ import java.time.temporal.TemporalAccessor
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class SlackParserAppTest {
+class ParserAppTest {
 
   private val dateTime: LocalDateTime = LocalDateTime.of(2023, 12, 25, 10, 15)
   private val stringDateTime = "2023-12-25 10&15"

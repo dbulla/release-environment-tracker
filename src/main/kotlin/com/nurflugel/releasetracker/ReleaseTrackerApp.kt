@@ -30,14 +30,14 @@ class ReleaseTrackerApp(
     }
   }
 
-  override fun run(vararg args: String?) {
-    val flag = args[0]
+  override fun run(vararg args: String) {
+    val flag: String = args[0]
     when {
-      flag.equals("-display") -> PresentationApp().run(jdbcTemplate)
-      flag.equals("-parse")   -> SlackParserApp().run(jdbcTemplate)
-      flag.equals("-both")    -> {
-        SlackParserApp().run(jdbcTemplate)
-        PresentationApp().run(jdbcTemplate)
+      flag.substring(0, 2) == "-d" -> DisplayApp().run(jdbcTemplate)
+      flag.substring(0, 2) == "-p" -> ParserApp().run(jdbcTemplate)
+      flag.substring(0, 2) == "-b" -> {
+        ParserApp().run(jdbcTemplate)
+        DisplayApp().run(jdbcTemplate)
       }
     }
   }

@@ -31,7 +31,7 @@ plugins {
   id("com.dorongold.task-tree") version "2.1.1"
 
   id("com.avast.gradle.docker-compose") version "0.16.11"
-  id("org.flywaydb.flyway") version "9.11.0"
+  id("org.flywaydb.flyway") version "9.12.0"
 }
 
 repositories {
@@ -69,14 +69,14 @@ tasks.withType<Test> {
   useJUnitPlatform()
 }
 
-val runPresentation by tasks.registering(JavaExec::class) {
+val runDisplay by tasks.registering(JavaExec::class) {
   group = "Release Tracker"
   mainClass.set("com.nurflugel.releasetracker.ReleaseTrackerApp")
   classpath = java.sourceSets["main"].runtimeClasspath
   args = mutableListOf("-display")
 }
 
-val runSlackParser by tasks.registering(JavaExec::class) {
+val runParser by tasks.registering(JavaExec::class) {
   group = "Release Tracker"
   mainClass.set("com.nurflugel.releasetracker.ReleaseTrackerApp")
   classpath = java.sourceSets["main"].runtimeClasspath
