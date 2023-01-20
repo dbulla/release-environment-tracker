@@ -16,11 +16,6 @@ class ReleaseTrackerApp(
   companion object {
     @JvmStatic
     fun main(vararg args: String) {
-      //      val flag = if (args.isEmpty()) {
-      //        "-both"
-      //      } else {
-      //        args[0]
-      //      }
 
       SpringApplicationBuilder(ReleaseTrackerApp::class.java)
         .web(WebApplicationType.NONE)
@@ -31,9 +26,9 @@ class ReleaseTrackerApp(
   }
 
   override fun run(vararg args: String) {
-    val flag = args[0].ifEmpty {
+    val flag = if (args.isEmpty()) {
       "-both"
-    }
+    } else args[0]
     val allResults =
       if (args.size > 1) {
         args[1].substring(0, 2) == "-a"
