@@ -10,54 +10,58 @@ import java.time.LocalDateTime
 
 class DisplayApp {
 
-  fun run(jdbcTemplate: JdbcTemplate) {
+  fun run(jdbcTemplate: JdbcTemplate, allResults: Boolean) {
     val records = loadData(jdbcTemplate)
-    val filteredData = filterData(records)
+    val filteredData = filterData(records, allResults)
     showData(filteredData)
   }
 
   private fun showData(filteredData: List<DataRecord>) {
     var oldAppName: String? = null
     println(
-      "\n\n\n  App".padEnd(45) + "   Environment".padEnd(30) + "Build #".padEnd(20) + "Commit Message".padEnd(65) + "   Version".padEnd(20) + "Story".padEnd(10) + "Date".padEnd(
-        15
-      )
+      "\n\n\nApp".padEnd(45) + "   Environment".padEnd(30) + "Build #".padEnd(18) + "Commit Message".padEnd(67) +
+      "   Version".padEnd(18) + "Story".padEnd(13) + "Date".padEnd(15)
     )
     for (datum in filteredData) {
       val appName = datum.appName.padEnd(45)
       val deployEnvironment = datum.deployEnvironment.toString().padEnd(30)
       val buildNumber = String.format("%d", datum.buildNumber).padEnd(15)
-      val story = datum.story
-                  ?: "".take(20).padEnd(45)
-      val commitMessage = (datum.commitMessage
-                           ?: "")
+      val commitMessage = suppressNullText(datum.commitMessage)
         .take(60)
         .padEnd(70)
+      val version = suppressNullText(datum.version).padEnd(15)
+      val story = suppressNullText(datum.story)
+        .take(20)
+        .padEnd(10)
       val date = "   " + datum.date.toString().padEnd(15)
-      val version = "   " + datum.version?.padEnd(15)
 
       val line = appName + deployEnvironment + buildNumber + commitMessage + version + story + date
       if (oldAppName != appName) println()
       println(line)
       oldAppName = appName
-
     }
   }
 
+  private fun suppressNullText(text: String?): String = if (text == null || text == "null") "" else text
+
   // take the raw data and:
   //   show the latest build for each app, and what envs it's at - show the full record
-  private fun filterData(data: List<DataRecord>): List<DataRecord> {
-    val results = mutableListOf<DataRecord>()
-    val applicationDeployMap: Map<String, List<DataRecord>> = data.groupBy { it.appName }
-    val keys = applicationDeployMap.keys.sorted()
-    for (key in keys) {
-      val appDeploys: List<DataRecord> = applicationDeployMap[key]!!
-      // filter this so only the highest build number remains - note that we might also want to filter on commit message...
-      val maxBuild = appDeploys.map { it.buildNumber }.max()
-      val latestEnvsForBuild: List<DataRecord> = appDeploys.filter { it.buildNumber == maxBuild }
-      results.addAll(latestEnvsForBuild)
-    }
-    return results
+  private fun filterData(data: List<DataRecord>, allResults: Boolean): List<DataRecord> {
+    return if (allResults)
+      data
+    else {
+      val results = mutableListOf<DataRecord>()
+      val applicationDeployMap: Map<String, List<DataRecord>> = data.groupBy { it.appName }
+      val keys = applicationDeployMap.keys.sorted()
+      for (key in keys) {
+        val appDeploys: List<DataRecord> = applicationDeployMap[key]!!
+        // filter this so only the highest build number remains - note that we might also want to filter on commit message...
+        val maxBuild = appDeploys.map { it.buildNumber }.max()
+        val latestEnvsForBuild: List<DataRecord> = appDeploys.filter { it.buildNumber == maxBuild }
+        results.addAll(latestEnvsForBuild)
+      }
+      results
+    } // no filtering
   }
 
   private fun loadData(jdbcTemplate: JdbcTemplate): List<DataRecord> {

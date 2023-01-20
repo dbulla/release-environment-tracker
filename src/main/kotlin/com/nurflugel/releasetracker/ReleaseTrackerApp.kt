@@ -16,28 +16,34 @@ class ReleaseTrackerApp(
   companion object {
     @JvmStatic
     fun main(vararg args: String) {
-      val flag = if (args.isEmpty()) {
-        "-both"
-      } else {
-        args[0]
-      }
+      //      val flag = if (args.isEmpty()) {
+      //        "-both"
+      //      } else {
+      //        args[0]
+      //      }
 
       SpringApplicationBuilder(ReleaseTrackerApp::class.java)
         .web(WebApplicationType.NONE)
         .headless(false)
         .bannerMode(Banner.Mode.OFF)
-        .run(flag)
+        .run(*args)
     }
   }
 
   override fun run(vararg args: String) {
-    val flag: String = args[0]
+    val flag = args[0].ifEmpty {
+      "-both"
+    }
+    val allResults =
+      if (args.size > 1) {
+        args[1].substring(0, 2) == "-a"
+      } else false
     when {
-      flag.substring(0, 2) == "-d" -> DisplayApp().run(jdbcTemplate)
+      flag.substring(0, 2) == "-d" -> DisplayApp().run(jdbcTemplate, allResults)
       flag.substring(0, 2) == "-p" -> ParserApp().run(jdbcTemplate)
       flag.substring(0, 2) == "-b" -> {
         ParserApp().run(jdbcTemplate)
-        DisplayApp().run(jdbcTemplate)
+        DisplayApp().run(jdbcTemplate, allResults)
       }
     }
   }
