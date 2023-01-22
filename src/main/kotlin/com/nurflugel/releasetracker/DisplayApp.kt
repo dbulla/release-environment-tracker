@@ -19,7 +19,7 @@ class DisplayApp {
   private fun showData(filteredData: List<DataRecord>) {
     var oldAppName: String? = null
     println(
-      "\n\n\nApp".padEnd(45) + "   Environment".padEnd(30) + "   Version".padEnd(18) + "Story".padEnd(13) + "Commit Message".padEnd(67) +
+      "\n\n\nApp".padEnd(45) + "   Environment".padEnd(30) + "   Version".padEnd(18) + "Story".padEnd(15) + "Commit Message".padEnd(67) +
       "Build #".padEnd(18) + "Date".padEnd(15)
     )
     println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
@@ -33,7 +33,7 @@ class DisplayApp {
       val version = suppressNullText(datum.version).padEnd(15)
       val story = suppressNullText(datum.story)
         .take(20)
-        .padEnd(10)
+        .padEnd(15)
       val date = "   " + datum.date.toString().padEnd(15)
 
       val line = appName + deployEnvironment + version + story + commitMessage + buildNumber + date
