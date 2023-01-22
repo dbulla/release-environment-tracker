@@ -19,9 +19,10 @@ class DisplayApp {
   private fun showData(filteredData: List<DataRecord>) {
     var oldAppName: String? = null
     println(
-      "\n\n\nApp".padEnd(45) + "   Environment".padEnd(30) + "Build #".padEnd(18) + "Commit Message".padEnd(67) +
-      "   Version".padEnd(18) + "Story".padEnd(13) + "Date".padEnd(15)
+      "\n\n\nApp".padEnd(45) + "   Environment".padEnd(30) + "   Version".padEnd(18) + "Story".padEnd(13) + "Commit Message".padEnd(67) +
+      "Build #".padEnd(18) + "Date".padEnd(15)
     )
+    println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
     for (datum in filteredData) {
       val appName = datum.appName.padEnd(45)
       val deployEnvironment = datum.deployEnvironment.toString().padEnd(30)
@@ -35,8 +36,8 @@ class DisplayApp {
         .padEnd(10)
       val date = "   " + datum.date.toString().padEnd(15)
 
-      val line = appName + deployEnvironment + buildNumber + commitMessage + version + story + date
-      if (oldAppName != appName) println()
+      val line = appName + deployEnvironment + version + story + commitMessage + buildNumber + date
+      if (oldAppName != appName && !appName.contains("shared")) println()
       println(line)
       oldAppName = appName
     }
