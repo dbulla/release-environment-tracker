@@ -11,7 +11,7 @@ import java.time.LocalDateTime
 class DisplayApp {
 
   fun run(jdbcTemplate: JdbcTemplate, allResults: Boolean) {
-    val records = loadData(jdbcTemplate)
+    val records = loadData(jdbcTemplate).sortedWith(compareBy({ it.appName }, { it.buildNumber }))
     val filteredData = filterData(records, allResults)
     showData(filteredData)
   }
