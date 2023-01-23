@@ -59,7 +59,8 @@ class DisplayApp {
         // filter this so only the highest build number remains - note that we might also want to filter on commit message...
         val maxBuild = appDeploys.map { it.buildNumber }.max()
         val latestEnvsForBuild: List<DataRecord> = appDeploys.filter { it.buildNumber == maxBuild }
-        results.addAll(latestEnvsForBuild)
+        val sortedByDeployOrder = latestEnvsForBuild.sortedBy { it.deployEnvironment.ordinal }
+        results.addAll(sortedByDeployOrder)
       }
       results
     } // no filtering
