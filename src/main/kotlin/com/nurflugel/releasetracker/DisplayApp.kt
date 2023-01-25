@@ -7,9 +7,10 @@ import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.RowMapper
 import java.sql.ResultSet
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class DisplayApp {
-
+  val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
   fun run(jdbcTemplate: JdbcTemplate, allResults: Boolean) {
     val records = loadData(jdbcTemplate).sortedWith(compareBy({ it.appName }, { it.buildNumber }))
     val filteredData = filterData(records, allResults)
@@ -34,7 +35,8 @@ class DisplayApp {
       val story = suppressNullText(datum.story)
         .take(20)
         .padEnd(15)
-      val date = "   " + datum.date.toString().padEnd(15)
+      val formattedDate = datum.date?.format(formatter)
+      val date = "   " + formattedDate?.padEnd(15)
 
       val line = appName + deployEnvironment + version + story + commitMessage + buildNumber + date
       if (oldAppName != appName && !appName.contains("shared")) println()
