@@ -20,18 +20,21 @@ class DisplayApp {
   private fun showData(filteredData: List<DataRecord>) {
     var oldAppName: String? = null
     println(
-      "\n\n\nApp".padEnd(45) + "   Environment".padEnd(30) + "   Version".padEnd(18) + "Story".padEnd(15) + "Commit Message".padEnd(67) +
-      "Build #".padEnd(18) + "Date".padEnd(20) + "Commit Hash"
+      "\n\n\nApp".padEnd(45) + "   Environment".padEnd(20) + "   Version".padEnd(15) + "Author".padEnd(20)
+      + "Story".padEnd(15) + "Commit Message".padEnd(67) + "Build #".padEnd(18) + "Date".padEnd(20) + "Commit Hash"
     )
     println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
     for (datum in filteredData) {
       val appName = datum.appName.padEnd(45)
-      val deployEnvironment = datum.deployEnvironment.toString().padEnd(30)
+      val deployEnvironment = datum.deployEnvironment.toString().padEnd(20)
       val buildNumber = String.format("%d", datum.buildNumber).padEnd(15)
       val commitMessage = suppressNullText(datum.commitMessage)
         .take(60)
         .padEnd(70)
-      val version = suppressNullText(datum.version).padEnd(15)
+      val version = suppressNullText(datum.version).padEnd(10)
+      val author = suppressNullText(datum.author)
+        .take(15)
+        .padEnd(20)
       val story = suppressNullText(datum.story)
         .take(20)
         .padEnd(15)
@@ -40,8 +43,7 @@ class DisplayApp {
       val commitHash = suppressNullText(datum.commitHash)
         .padEnd(10)
 
-
-      val line = appName + deployEnvironment + version + story + commitMessage + buildNumber + date + commitHash
+      val line = appName + deployEnvironment + version + author + story + commitMessage + buildNumber + date + commitHash
       if (oldAppName != appName && !appName.contains("shared")) println()
       println(line)
       oldAppName = appName
@@ -92,7 +94,7 @@ class DisplayApp {
       val timestamp = resultSet.getTimestamp("deploy_date")
       val date: LocalDateTime = timestamp.toLocalDateTime()
       val commitMessage = resultSet.getString("commit_message")
-      val author = resultSet.getString("commit_message")
+      val author = resultSet.getString("author")
       val story = resultSet.getString("story")
       val version = resultSet.getString("version")
       val commitHash = resultSet.getString("commit_hash")?.take(7)

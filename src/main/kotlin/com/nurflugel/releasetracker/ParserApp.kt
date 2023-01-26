@@ -45,6 +45,7 @@ class ParserApp() {
                 """).trimIndent();
       try {
         jdbcTemplate.update(sql)
+        println("Saved ${datum.appName}, build# ${datum.buildNumber}, author: ${datum.author}, message: ${datum.commitMessage}, hash: ${datum.commitHash}")
       } catch (e: Exception) {
         println("e.message = ${e.message}")
       }
