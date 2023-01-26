@@ -33,12 +33,14 @@ class ParserApp() {
       if (date == null) {
         date = LocalDateTime.now()
       }
+      // todo move into stored procedure
       val sql = ("""
-              INSERT INTO deploys (app_name, build_number, author, commit_message, deploy_date, environment, story, version)
-              VALUES ('${datum.appName}','${datum.buildNumber}', '${datum.author}','${datum.commitMessage}','$date','${datum.deployEnvironment}','${datum.story}','${datum.version}')
+              INSERT INTO deploys (app_name, build_number, author, commit_message, deploy_date, environment, story, version, commit_hash)
+              VALUES ('${datum.appName}','${datum.buildNumber}', '${datum.author}','${datum.commitMessage}','$date','${datum.deployEnvironment}','${datum.story}','${datum.version}', '${datum.commitHash}')
               ON CONFLICT (app_name, build_number, environment) DO UPDATE
                  SET deploy_date = excluded.deploy_date,
                      commit_message = excluded.commit_message,
+                     commit_hash = excluded.commit_hash,
                      story = excluded.story;
                 """).trimIndent();
       try {
@@ -51,8 +53,6 @@ class ParserApp() {
 
   /** Take the text copy/pasted text and parse the data we want out of it */
   private fun parseData(textToProcess: String): List<DataRecord> {
-    //    println(textToProcess)
-
     val lines = textToProcess.split('\n')
     return lines
       .filter { it.startsWith("app:") }

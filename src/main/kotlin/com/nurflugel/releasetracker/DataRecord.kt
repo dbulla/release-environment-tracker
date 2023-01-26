@@ -14,6 +14,7 @@ class DataRecord {
   var appName: String
   var version: String?
   var story: String?
+  var commitHash: String?
 
   companion object {
     val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH&mm");
@@ -28,6 +29,7 @@ class DataRecord {
     author: String,
     story: String?,
     version: String?,
+    commitHash: String?,
   ) {
     this.appName = appName
     this.buildNumber = buildNumber
@@ -37,6 +39,7 @@ class DataRecord {
     this.author = author
     this.story = story
     this.version = version
+    this.commitHash = commitHash
   }
 
   constructor(text: String) {
@@ -52,6 +55,7 @@ class DataRecord {
     this.author = valueMap["author"].toString()
     this.commitMessage = parseCommitMessage(valueMap["commitMessage"].toString())
     this.story = parseStoryFromCommit(valueMap["commitMessage"].toString())
+    this.commitHash = valueMap["commitHash"].toString().trim()
   }
 
   private fun parseCommitMessage(text: String): String {
@@ -115,6 +119,6 @@ class DataRecord {
   }
 
   override fun toString(): String {
-    return "$appName $buildNumber $deployEnvironment $date"
+    return "$appName $buildNumber $deployEnvironment $date $commitHash $commitMessage"
   }
 }

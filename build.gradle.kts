@@ -47,7 +47,7 @@ dependencies {
   implementation("com.google.guava:guava:31.1-jre")
   implementation(databaseLibrary)
   implementation("org.springframework.boot:spring-boot-starter")
-  implementation("org.springframework.boot:spring-boot-starter-jdbc:3.0.1")
+  implementation("org.springframework.boot:spring-boot-starter-jdbc:3.0.2")
 
   runtimeOnly("org.postgresql:postgresql")
 

@@ -10,7 +10,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class DisplayApp {
-  val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
+  private val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
   fun run(jdbcTemplate: JdbcTemplate, allResults: Boolean) {
     val records = loadData(jdbcTemplate).sortedWith(compareBy({ it.appName }, { it.buildNumber }))
     val filteredData = filterData(records, allResults)
@@ -21,7 +21,7 @@ class DisplayApp {
     var oldAppName: String? = null
     println(
       "\n\n\nApp".padEnd(45) + "   Environment".padEnd(30) + "   Version".padEnd(18) + "Story".padEnd(15) + "Commit Message".padEnd(67) +
-      "Build #".padEnd(18) + "Date".padEnd(15)
+      "Build #".padEnd(18) + "Date".padEnd(20) + "Commit Hash"
     )
     println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
     for (datum in filteredData) {
@@ -36,9 +36,12 @@ class DisplayApp {
         .take(20)
         .padEnd(15)
       val formattedDate = datum.date?.format(formatter)
-      val date = "   " + formattedDate?.padEnd(15)
+      val date = "   " + formattedDate?.padEnd(20)
+      val commitHash = suppressNullText(datum.commitHash)
+        .padEnd(10)
 
-      val line = appName + deployEnvironment + version + story + commitMessage + buildNumber + date
+
+      val line = appName + deployEnvironment + version + story + commitMessage + buildNumber + date + commitHash
       if (oldAppName != appName && !appName.contains("shared")) println()
       println(line)
       oldAppName = appName
@@ -55,13 +58,20 @@ class DisplayApp {
     else {
       val results = mutableListOf<DataRecord>()
       val applicationDeployMap: Map<String, List<DataRecord>> = data.groupBy { it.appName }
-      val keys = applicationDeployMap.keys.sorted()
-      for (key in keys) {
-        val appDeploys: List<DataRecord> = applicationDeployMap[key]!!
+      val appNames = applicationDeployMap.keys.sorted()
+      for (appName in appNames) {
+        val appDeploys: List<DataRecord> = applicationDeployMap[appName]!!
         // filter this so only the highest build number remains - note that we might also want to filter on commit message...
         val maxBuild = appDeploys.map { it.buildNumber }.max()
         val latestEnvsForBuild: List<DataRecord> = appDeploys.filter { it.buildNumber == maxBuild }
-        val sortedByDeployOrder = latestEnvsForBuild.sortedBy { it.deployEnvironment.ordinal }
+        // we do this bit below because the same hash code might be used for both a "full" pipeline build, or also a "targeted" build,
+        // when someone JUST does a pipeline run for Prod.  Although this should be discouraged, people do it often.
+        val commitHashForBuild = latestEnvsForBuild[0].commitHash
+        val allBuildsForCommitHash: List<DataRecord> = when {
+          commitHashForBuild.isNullOrEmpty() -> appDeploys.filter { it.buildNumber == maxBuild }
+          else                               -> appDeploys.filter { it.commitHash == commitHashForBuild }
+        }
+        val sortedByDeployOrder = allBuildsForCommitHash.sortedWith(compareBy({ it.buildNumber }, { it.deployEnvironment.ordinal }))
         results.addAll(sortedByDeployOrder)
       }
       results
@@ -70,7 +80,7 @@ class DisplayApp {
 
   private fun loadData(jdbcTemplate: JdbcTemplate): List<DataRecord> {
     val sql: String = ("""
-              SELECT app_name, build_number, author, commit_message, deploy_date, environment, story, version 
+              SELECT app_name, build_number, author, commit_message, deploy_date, environment, story, version, commit_hash
               FROM deploys
                 """).trimIndent();
     //Declare rowMapper to map DB records to collection of Beer entities:
@@ -85,7 +95,8 @@ class DisplayApp {
       val author = resultSet.getString("commit_message")
       val story = resultSet.getString("story")
       val version = resultSet.getString("version")
-      val dataRecord = DataRecord(appName, buildNumber, environment, date, commitMessage, author, story, version)
+      val commitHash = resultSet.getString("commit_hash")?.take(7)
+      val dataRecord = DataRecord(appName, buildNumber, environment, date, commitMessage, author, story, version, commitHash)
       dataRecord
     }
 
