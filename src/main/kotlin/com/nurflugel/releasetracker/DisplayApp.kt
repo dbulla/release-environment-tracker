@@ -23,7 +23,7 @@ class DisplayApp {
       "\n\n\nApp".padEnd(45) + "   Environment".padEnd(20) + "   Version".padEnd(15) + "Author".padEnd(20)
       + "Story".padEnd(15) + "Commit Message".padEnd(67) + "Build #".padEnd(18) + "Date".padEnd(20) + "Commit Hash"
     )
-    println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+    println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
     for (datum in filteredData) {
       val appName = datum.appName.padEnd(45)
       val deployEnvironment = datum.deployEnvironment.toString().padEnd(20)
